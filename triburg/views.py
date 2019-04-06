@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect,render
 from django.views.generic import TemplateView
+from .forms import UserRegistrationForm
 
 def redirectview(request):
     if request.user.is_authenticated:
@@ -13,8 +14,9 @@ def redirectview(request):
 def homepage(request):
     return HttpResponse("<h1>This is home page</h1>")
 
-class Loginpage(TemplateView):
-    template = 'login.html'
+
+class SignupPage(TemplateView):
+    template = 'signup.html'
     def get(self, request, *wargs, **kwargs):
-        args = {}
+        args = {'form':UserRegistrationForm()}
         return render(request,self.template,args)
