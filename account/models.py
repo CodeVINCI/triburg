@@ -3,8 +3,9 @@ from django.contrib.auth.models import User,UserManager,AbstractUser
 # Create your models here.
 
 
-typeofusers = [('admin','admin'),('inspector','inspector'),('vendor','vendor'),('merchant','merchant')]
+typeofusers = [('inspector','inspector'),('vendor','vendor'),('merchant','merchant')]
 
 class User(AbstractUser):
     user_type = models.CharField(choices=typeofusers,max_length=10)
+    is_admin = models.BooleanField(default=False)
     objects = UserManager()
