@@ -7,7 +7,7 @@ def redirectview(request):
     if request.user.is_authenticated:
         return redirect('/home')
     else:
-        return redirect('/login')
+        return redirect('/signup')
 
 
 
