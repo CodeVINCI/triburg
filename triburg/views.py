@@ -14,7 +14,7 @@ def homepage(request):
     return HttpResponse("<h1>This is home page</h1>")
 
 class Loginpage(TemplateView):
-    template = 'loginpage.html'
+    template = 'login.html'
     def get(self, request, *wargs, **kwargs):
         args = {}
         return render(request,self.template,args)
