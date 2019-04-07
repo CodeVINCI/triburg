@@ -39,6 +39,9 @@ class SignupPage(TemplateView):
 class SignupRequestpage(TemplateView):
     template_name = 'signuprequests.html'
     def get(self, request, *wargs, **kwargs):
-        pending = UserRequest.objects.filter(permission=None)
-        args = {"pending_requests":pending}
-        return render(request, self.template_name,args)
+        if request.user.is_admin:
+            pending = UserRequest.objects.filter(permission=None)
+            args = {"pending_requests":pending}
+            return render(request, self.template_name,args)
+        else:
+            return HttpResponse('<h1>Please Log in as the admin</h1>')
