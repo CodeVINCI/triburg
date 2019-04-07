@@ -35,3 +35,10 @@ class SignupPage(TemplateView):
             r = UserRequest(user=user,permission=None)
             r.save()
             return HttpResponse("<h1>"+username+"</h1><h5>Admin will review your request</h5>")
+
+class SignupRequestpage(TemplateView):
+    template_name = 'signuprequests.html'
+    def get(self, request, *wargs, **kwargs):
+        pending = UserRequest.objects.filter(permission=None)
+        args = {"pending_requests":pending}
+        return render(request, self.template_name,args)
