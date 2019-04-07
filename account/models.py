@@ -9,3 +9,10 @@ class User(AbstractUser):
     user_type = models.CharField(choices=typeofusers,max_length=10)
     is_admin = models.BooleanField(default=False)
     objects = UserManager()
+
+
+
+class UserRequest(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    granted_on = models.DateTimeField()
+    permission = models.NullBooleanField(default=None,null=True)

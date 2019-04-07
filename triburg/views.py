@@ -3,6 +3,7 @@ from django.shortcuts import redirect,render
 from django.views.generic import TemplateView
 from .forms import UserRegistrationForm
 from django.contrib.auth import login, authenticate
+from account.models import UserRequest, User
 
 def redirectview(request):
     if request.user.is_authenticated:
@@ -28,7 +29,4 @@ class SignupPage(TemplateView):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('/home')
+            return HttpResponse("<h1>"+username+"</h1><h5>Admin will review your request</h5>")
