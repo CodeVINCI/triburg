@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from .views import SignupPage,SignupRequestpage
-from django.contrib.auth.views import login
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.redirectview),
     path('home/', views.homepage),
     path('signup/', SignupPage.as_view()),
-    path('login/',login ),
+    path('login', auth_views.LoginView.as_view(template_name='login.html')),
     path('signuprequests/', SignupRequestpage.as_view()),
 ]
