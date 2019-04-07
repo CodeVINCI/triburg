@@ -16,3 +16,6 @@ class UserRequest(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     granted_on = models.DateTimeField(null=True,blank=True)
     permission = models.NullBooleanField(default=None,null=True)
+
+    def __str__(self):
+        return "request from "+self.user.username
