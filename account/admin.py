@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User
+from .models import User,UserRequest
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id','username','email','is_admin','user_type','first_name','last_name',)
@@ -9,3 +9,4 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User, UserAdmin)
+admin.site.register(UserRequest)
