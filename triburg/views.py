@@ -29,4 +29,9 @@ class SignupPage(TemplateView):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            user = User.objects.get(username=username)
+            user.is_active=False
+            user.save()
+            r = UserRequest(user=user,permission=None)
+            r.save()
             return HttpResponse("<h1>"+username+"</h1><h5>Admin will review your request</h5>")

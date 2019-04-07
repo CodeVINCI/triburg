@@ -14,5 +14,5 @@ class User(AbstractUser):
 
 class UserRequest(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    granted_on = models.DateTimeField()
+    granted_on = models.DateTimeField(null=True,blank=True)
     permission = models.NullBooleanField(default=None,null=True)
