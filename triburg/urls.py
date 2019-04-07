@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from .views import SignupPage,SignupRequestpage
-import django.contrib.auth.views import login
+from django.contrib.auth.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
