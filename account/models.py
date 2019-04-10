@@ -18,4 +18,4 @@ class UserRequest(models.Model):
     permission = models.NullBooleanField(default=None,null=True)
 
     def __str__(self):
-        return "request from "+self.user.username
+        return self.user.first_name+" "+self.user.last_name+" "+"as"+" "+self.user.username+" "+self.user.email+" "+"for role of"+" "+self.user.user_type
