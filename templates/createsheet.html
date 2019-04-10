@@ -8,29 +8,21 @@
     <title>CreateSheet</title>
 </head>
 <body>
-<div class="row">
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">{{user.email}}</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="collapsible.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="row" style="align-content: center;text-align: center;padding-left: 8%;padding-right: 8%;">
     <div style="align-content: center;text-align: center;">
         <h3>Create Cost Sheet</h3>
     </div>
-    <div class="row">
+    <div class="row" style="text-align: center;align-content: center;">
         <div class="row" style="text-align: center;align-content: center;">
-            <a class="waves-effect waves-light btn-large" style="width: 200px;">Add row</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light red btn-large" style="width: 200px;">Delete row</a>
-            <a class="btn-floating btn-large waves-effect waves-light right blue"><i class="material-icons">save</i></a>
-        </div>
-        <div style="overflow-y: scroll; height:600px;width: 80%;">
-            <table>
-                <tr>
-                    <th>S No.</th>
-                    <th>Raw Material</th>
-                    <th>Description</th>
-                    <th>Cost/Unit</th>
-                    <th>Quantity</th>
-                    <th>Unit</th>
-                    <th>Ref. no. of material</th>
-                </tr>
-            </table>
-        </div>
-        <div class="row">
+            <div class="row">
         <div class="input-field col s6">
             <select>
                 <option value="" disabled selected>Buyers</option>
@@ -40,10 +32,44 @@
             </select>
             <label>Select Buyer</label>
             </div>
-        <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">Style No.</label>
+        <div class="input-field col s6" style="padding-right: 10%;">
+                <input id="styleno" type="text" class="validate">
+                <label for="styleno">Style No.</label>
         </div>
+        </div>
+        <div class="row" style="padding-right: 10%;">
+            <input placeholder="Date of Delivery" type="text" class="datepicker">
+        </div>
+        </div>
+        <div style="overflow-y: scroll; height:600px;width: 80%;text-align: center;align-content: center;margin: auto;">
+            <table>
+                <tr>
+                    <th>S No.</th>
+                    <th>Raw Material</th>
+                    <th>Description</th>
+                    <th>Cost/Unit</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Total</th>
+                    <th>Ref. no. of material</th>
+                </tr>
+                <tr><th colspan="8" style="background-color:grey;">Fabrics</th></tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Fabric No. 1</td>
+                    <td>Description of fabric 1</td>
+                    <td>1000 Rs/m</td>
+                    <td>50</td>
+                    <td>m</td>
+                    <td>50000</td>
+                    <td></td>
+                </tr>
+                <tr><th colspan="8"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            </table>
+        </div>
+
+        <div class="row">
+            <a class="waves-effect waves-light btn-large blue"><i class="material-icons right">save</i>save</a>
         </div>
     </div>
 </div>
@@ -51,7 +77,9 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
+    var instances = M.FormSelect.init(elems);
+    var dateelems = document.querySelectorAll('.datepicker');
+    var dateinstances = M.Datepicker.init(dateelems);
   });
 </script>
 </body>
