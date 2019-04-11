@@ -9,5 +9,5 @@ from .models import Buyer
 class CreateSheet(TemplateView):
     template_name = 'createsheet.html'
     def get(self, request, *wargs, **kwargs):
-        args = {'buyers': Buyer.objects.all()}
+        args = {'buyers': Buyer.objects.all().order_by('buyer_name')}
         return render(request,self.template_name,args)
