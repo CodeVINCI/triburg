@@ -19,3 +19,10 @@ class UserRequest(models.Model):
 
     def __str__(self):
         return self.user.first_name+" "+self.user.last_name+" "+"as"+" "+self.user.username+" "+self.user.email+" "+"for role of"+" "+self.user.user_type
+
+
+class Buyer(models.Model):
+    buyer_name = models.CharField(max_length=25,null=False,blank=False)
+
+    def __str__(self):
+        return self.buyer_name
