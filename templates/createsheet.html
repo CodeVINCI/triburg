@@ -41,7 +41,7 @@
         </div>
         </div>
         <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
-            <table>
+            <table id=costsheettable>
                 <tr><th colspan="10" style="background-color:grey;">Fabric Details</th></tr>
                 <tr><th colspan="10"><i>Knit</i></th></tr>
                 <tr id="knit_fabric">
@@ -56,8 +56,8 @@
                     <th>Cost/unit</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr>
-                    <td>1</td>
+                <tr id=knit_fabric_form>
+                    <td id=fabricserialno>1</td>
                     <td><div class="input-field col s12"><input id="fabricname" type="text" class="validate"><label for="fabricname">fabric</label></div></td>
                     <td><div class="input-field col s12"><input id="fabricgsm" type="text" class="validate"><label for="fabricgsm">gsm</label></div></td>
                     <td><div class="input-field col s12"><input id="fabriccontent" type="text" class="validate"><label for="fabriccontent">##/##..-Abc/Abc..</label></div></td>
@@ -66,7 +66,7 @@
                     <td><div class="input-field col s12"><input id="fabrictotalwidth" type="text" class="validate"><label for="fabrictotalwidth">inches</label></div></td>
                     <td><div class="input-field col s12"><input id="fabricconsumption" type="text" class="validate"><label for="fabricconsumption">metres</label></div></td>
                     <td><div class="input-field col s12"><input id="fabricperunitcost" type="text" class="validate"><label for="fabricperunitcost">Cost/m</label></div></td>
-                    <td><div class="input-field col s12"><input id="fabrictotalcost" type="text" class="validate"><label for="fabrictotalcost">total</label></div></td>
+                    <td>(consumption)*(cost/m)</td>
                 </tr>
                 <tr><th colspan="10"><a onclick="addknitfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Woven</i></th></tr>
@@ -92,7 +92,7 @@
                     <td><div class="input-field col s12"><input id="wovenfabrictotalwidth" type="text" class="validate"><label for="wovenfabrictotalwidth">inches</label></div></td>
                     <td><div class="input-field col s12"><input id="wovenfabricconsumption" type="text" class="validate"><label for="wovenfabricconsumption">kg</label></div></td>
                     <td><div class="input-field col s12"><input id="wovenfabricperunitcost" type="text" class="validate"><label for="wovenfabricperunitcost">Cost/kg</label></div></td>
-                    <td><div class="input-field col s12"><input id="wovenfabrictotalcost" type="text" class="validate"><label for="wovenfabrictotalcost">total</label></div></td>
+                    <td>(consumption)*(cost/m)</td>
                 </tr>
                 <tr><th colspan="10"><a onclick="addwovenfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10" style="background-color:grey;">Trims</th></tr>
@@ -253,6 +253,32 @@
     var tipelems = document.querySelectorAll('.tooltipped');
     var tipinstances = M.Tooltip.init(tipelems);
   });
+
+  function addknitfabric(event){
+    var form = document.getElementById('knit_fabric_form');
+    var serialno = form.querySelector('#fabricserialno').innerText;
+    var fabricname = form.querySelector('#fabricname').value;
+    var gsm = form.querySelector('#fabricgsm').value;
+    var content = form.querySelector('#fabriccontent').value;
+    var count = form.querySelector('#fabriccount').value;
+    var construction = form.querySelector('#fabricconstruction').value;
+    var fabrictotalwidth = form.querySelector('#fabrictotalwidth').value;
+    var fabricconsumption = form.querySelector('#fabricconsumption').value;
+    var fabricperunitcost = form.querySelector('#fabricperunitcost').value;
+    var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
+    var newRow = document.createElement("tr");
+    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+fabrictotal+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#fabricserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#fabricname').value = '';
+    form.querySelector('#fabricgsm').value='';
+    form.querySelector('#fabriccontent').value='';
+    form.querySelector('#fabriccount').value='';
+    form.querySelector('#fabricconstruction').value='';
+    form.querySelector('#fabrictotalwidth').value='';
+    form.querySelector('#fabricconsumption').value='';
+    form.querySelector('#fabricperunitcost').value='';
+  }
 
 </script>
 </body>
