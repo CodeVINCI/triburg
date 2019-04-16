@@ -40,14 +40,14 @@
             <input placeholder="Date of Delivery" type="text" class="datepicker">
         </div>
         </div>
-        <div style="overflow-y: scroll; height:600px;width: 90%;text-align: center;align-content: center;margin: auto;">
+        <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
             <table>
                 <tr><th colspan="10" style="background-color:grey;">Fabric Details</th></tr>
                 <tr><th colspan="10"><i>Knit</i></th></tr>
                 <tr id="knit_fabric">
                     <th>S no.</th>
-                    <th>Fabric type</th>
                     <th>Fabric name</th>
+                    <th>GSM</th>
                     <th>Content</th>
                     <th>Count</th>
                     <th>Construction</th>
@@ -56,12 +56,24 @@
                     <th>Cost/unit</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr>
+                    <td>1</td>
+                    <td><div class="input-field col s12"><input id="fabricname" type="text" class="validate"><label for="fabricname">fabric</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabricgsm" type="text" class="validate"><label for="fabricgsm">gsm</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabriccontent" type="text" class="validate"><label for="fabriccontent">##/##..-Abc/Abc..</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabriccount" type="text" class="validate tooltipped" data-position="bottom" data-tooltip="##x##/##x##/##x##/##x##/##x##"><label for="fabriccount">#x#/#x#..</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabricconstruction" type="text" class="validate"><label for="fabricconstruction">EPIxPPI</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabrictotalwidth" type="text" class="validate"><label for="fabrictotalwidth">inches</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabricconsumption" type="text" class="validate"><label for="fabricconsumption">metres</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabricperunitcost" type="text" class="validate"><label for="fabricperunitcost">Cost/m</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabrictotalcost" type="text" class="validate"><label for="fabrictotalcost">total</label></div></td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addknitfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Woven</i></th></tr>
                 <tr id="woven_fabric">
                     <th>S no.</th>
-                    <th>Fabric type</th>
                     <th>Fabric name</th>
+                    <th>GSM</th>
                     <th>Content</th>
                     <th>Count</th>
                     <th>Construction</th>
@@ -70,7 +82,7 @@
                     <th>Cost/unit</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr><th colspan="10"><a  class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10" style="background-color:grey;">Trims</th></tr>
                 <tr><th colspan="10"><i>Button</i></th></tr>
                 <tr id="button_headings">
@@ -226,7 +238,10 @@
     var instances = M.FormSelect.init(elems);
     var dateelems = document.querySelectorAll('.datepicker');
     var dateinstances = M.Datepicker.init(dateelems);
+    var tipelems = document.querySelectorAll('.tooltipped');
+    var tipinstances = M.Tooltip.init(tipelems);
   });
+
 </script>
 </body>
 </html>
