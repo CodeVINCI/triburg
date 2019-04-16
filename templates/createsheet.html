@@ -82,8 +82,8 @@
                     <th>Cost/unit</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr>
-                    <td>1</td>
+                <tr id='woven_fabric_form'>
+                    <td id='wovenfabricserialno'>1</td>
                     <td><div class="input-field col s12"><input id="wovenfabricname" type="text" class="validate"><label for="wovenfabricname">fabric</label></div></td>
                     <td><div class="input-field col s12"><input id="wovenfabricgsm" type="text" class="validate"><label for="wovenfabricgsm">gsm</label></div></td>
                     <td><div class="input-field col s12"><input id="wovenfabriccontent" type="text" class="validate"><label for="wovenfabriccontent">##/##..-Abc/Abc..</label></div></td>
@@ -99,16 +99,26 @@
                 <tr><th colspan="10"><i>Button</i></th></tr>
                 <tr id="button_headings">
                     <th>S no.</th>
-                    <th>Button Type</th>
+                    <th colspan="2">Button Type</th>
                     <th>Button Size</th>
                     <th>Consumption(pcs)</th>
                     <th colspan="2">Rs/pc, Rs/dozen, Rs/gross</th>
                     <th>Cost</th>
                     <th>Cost/Unit</th>
-                    <th colspan="2">Total Cost</th>
+                    <th>Total Cost</th>
 
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='button_form'>
+                  <td id='buttonserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='buttontype' class="browser-default"><option value="" disabled selected>Choose button type</option><option value="wooden">wooden</option><option value="plastic">plastic</option><option value="metal">metal</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="buttonsize" type="text" class="validate"><label for="buttonsize">Linge</label></div></td>
+                  <td><div class="input-field col s12"><input id="buttonconsumption" type="text" class="validate"><label for="buttonconsumption">pcs</label></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='buttoncostunit' class="browser-default"><option value="" disabled selected>Select option</option><option value="Rs/piece">Rs/piece</option><option value="Rs/dozen">Rs/dozen</option><option value="Rs/gross">Rs/gross</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="buttoncost" type="text" class="validate"><label for="buttoncost">cost</label></div></td>
+                  <td>Cost per piece</td>
+                  <td>Total button cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick='addbutton(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Zipper</i></th></tr>
                 <tr id="zipper_headings">
                    <th>S no.</th>
@@ -279,6 +289,65 @@
     form.querySelector('#fabricconsumption').value='';
     form.querySelector('#fabricperunitcost').value='';
   }
+  function addwovenfabric(event){
+    var form = document.getElementById('woven_fabric_form');
+    var serialno = form.querySelector('#wovenfabricserialno').innerText;
+    var fabricname = form.querySelector('#wovenfabricname').value;
+    var gsm = form.querySelector('#wovenfabricgsm').value;
+    var content = form.querySelector('#wovenfabriccontent').value;
+    var count = form.querySelector('#wovenfabriccount').value;
+    var construction = form.querySelector('#wovenfabricconstruction').value;
+    var fabrictotalwidth = form.querySelector('#wovenfabrictotalwidth').value;
+    var fabricconsumption = form.querySelector('#wovenfabricconsumption').value;
+    var fabricperunitcost = form.querySelector('#wovenfabricperunitcost').value;
+    var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
+    var newRow = document.createElement("tr");
+    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+fabrictotal+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#wovenfabricserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#wovenfabricname').value = '';
+    form.querySelector('#wovenfabricgsm').value='';
+    form.querySelector('#wovenfabriccontent').value='';
+    form.querySelector('#wovenfabriccount').value='';
+    form.querySelector('#wovenfabricconstruction').value='';
+    form.querySelector('#wovenfabrictotalwidth').value='';
+    form.querySelector('#wovenfabricconsumption').value='';
+    form.querySelector('#wovenfabricperunitcost').value='';
+  }
+
+  function addbutton(event){
+    var form = document.getElementById('button_form');
+    var serialno = form.querySelector('#buttonserialno').innerText;
+    var buttontype = form.querySelector('#buttontype').value;
+    var buttonsize = form.querySelector('#buttonsize').value;
+    var consumption = form.querySelector('#buttonconsumption').value;
+    var costunit = form.querySelector('#buttoncostunit').value;
+    var buttoncost = form.querySelector('#buttoncost').value;
+    var buttoncostperunit;
+    if(costunit==='Rs/piece'){
+      buttoncostperunit = parseFloat(buttoncost);
+    }
+    else if(costunit==='Rs/dozen'){
+      buttoncostperunit = parseFloat(buttoncost)/12.0;
+    }
+    else if(costunit==='Rs/gross'){
+      buttoncostperunit = parseFloat(buttoncost)/144.0;
+    }
+    buttoncostperunit = buttoncostperunit.toFixed(2);
+    var buttontotalcost = parseInt(consumption)*buttoncostperunit;
+    buttontotalcost = buttontotalcost.toFixed(2);
+    var newRow = document.createElement("tr");
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ buttontype +'</td><td>'+ buttonsize +'</td><td>'+consumption+'</td><td colspan="2">'+costunit+'</td><td>'+buttoncost+'</td><td>'+buttoncostperunit+'</td><td>'+buttontotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#buttonserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#buttontype').value='';
+    form.querySelector('#buttonsize').value='';
+    form.querySelector('#buttonconsumption').value='';
+    form.querySelector('#buttoncostunit').value='';
+    form.querySelector('#buttoncost').value='';
+  }
+
+
 
 </script>
 </body>
