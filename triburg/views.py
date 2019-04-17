@@ -50,7 +50,13 @@ class SignupRequestpage(TemplateView):
 def approverequest(request):
     if request.user.is_admin:
         id = request.GET['id']
-        return redirect('/home')
+        r = UserRequest.objects.get(id=id)
+        u = r.user
+        u.is_active=True;
+        u.save()
+        r.permission = True;
+        r.save()
+        return redirect('/signuprequests')
     else:
         return HttpResponse('<h1>Not Admin</h1>')
 
@@ -58,6 +64,12 @@ def approverequest(request):
 def disapproverequest(request):
     if request.user.is_admin:
         id = request.GET['id']
+        r = UserRequest.objects.get(id=id)
+        u = r.user
+        u.is_active=False;
+        u.save()
+        r.permission = False;
+        r.save()
         return redirect('/signuprequests')
     else:
-        return HttpResponse('<h1>Not Admin</h1>')    
+        return HttpResponse('<h1>Not Admin</h1>')
