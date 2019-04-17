@@ -17,3 +17,9 @@ class PreviewSheet(TemplateView):
     def get(self, request, *wargs, **kwargs):
         args = {}
         return render(request,self.template_name,args)
+
+class Profile(TemplateView):
+    template_name = 'profile.html'
+    def get(self, request, *wargs, **kwargs):
+        args = {}
+        return render(request,self.template_name,args)
