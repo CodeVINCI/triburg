@@ -122,121 +122,216 @@
                 <tr><th colspan="10"><i>Zipper</i></th></tr>
                 <tr id="zipper_headings">
                    <th>S no.</th>
-                    <th>Zipper type</th>
+                    <th colspan="2">Zipper type</th>
                     <th>Zipper length</th>
                     <th>Consumption</th>
                     <th>Cost/Unit</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='zipper_form'>
+                  <td id='zipperserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='zippertype' class="browser-default"><option value="" disabled selected>Choose zipper type</option><option value="plastic">plastic</option><option value="metal">metal</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="zipperlength" type="text" class="validate"><label for="zipperlength">length</label></div></td>
+                  <td><div class="input-field col s12"><input id="zipperconsumption" type="text" class="validate"><label for="zipperconsumption">consumption</label></div></td>
+                  <td><div class="input-field col s12"><input id="zippercostperunit" type="text" class="validate"><label for="zippercostperunit">cost/unit</label></div></td>
+                  <td>Total zipper cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addzipper(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Hook and Eye</i></th></tr>
                 <tr id="hook_and_eye_headings">
                    <th>S no.</th>
-                    <th>Hook and eye type</th>
-                    <th>Size</th>
+                    <th colspan="2">Hook and eye type</th>
+                    <th colspan="2">Size</th>
                     <th>Cost/pair</th>
-                    <th>Consumption pairs</th>
+                    <th>Consumption</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='hook_form'>
+                  <td id='hookserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='hooktype' class="browser-default"><option value="" disabled selected>Choose hook type</option><option value="plastic">plastic</option><option value="metal">metal</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='hooksize' class="browser-default"><option value="" disabled selected>Hook size</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="7">7</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="hookcostperpair" type="text" class="validate"><label for="hookcostperpair">cost/pair</label></div></td>
+                  <td><div class="input-field col s12"><input id="hookconsumption" type="text" class="validate"><label for="hookconsumption">pairs</label></div></td>
+                  <td>Total hook cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addhook(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Snap Button</i></th></tr>
                 <tr id="snap_button_headings">
                    <th>S no.</th>
-                    <th>Button material</th>
-                    <th>Linge/Material</th>
+                    <th colspan="2">Button material</th>
+                    <th colspan="2">Linge</th>
                     <th>Cost/pair</th>
                     <th>Consumption</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='snap_form'>
+                  <td id='snapserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><input id="snapmaterial" type="text" class="validate"><label for="snapmaterial">material</label></div></td>
+                  <td colspan="2"><div class="input-field col s12"><input id="snapligne" type="text" class="validate"><label for="snapligne">ligne</label></div></td>
+                  <td><div class="input-field col s12"><input id="snapcostperpair" type="text" class="validate"><label for="snapcostperpair">cost/pair</label></div></td>
+                  <td><div class="input-field col s12"><input id="snapconsumption" type="text" class="validate"><label for="snapconsumption">pairs</label></div></td>
+                  <td>Total hook cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addsnap(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Fusing</i></th></tr>
                 <tr id="fusing_headings">
                    <th>S no.</th>
-                    <th>Fusing Type</th>
-                    <th>Description</th>
-                    <th>Cost/unit(Rs/m)</th>
+                    <th colspan="2">Fusing Type</th>
+                    <th colspan="2">Description</th>
+                    <th>Cost/unit</th>
                     <th>Consumption</th>
                     <th>Total</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='fusing_form'>
+                  <td id='fusingserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='fusingtype' class="browser-default"><option value="" disabled selected>Choose fusing type</option><option value="non woven">non woven</option><option value="woven">woven</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><input id="fusingdescription" type="text" class="validate"><label for="fusingdescription">description</label></div></td>
+                  <td><div class="input-field col s12"><input id="fusingcostperunit" type="text" class="validate"><label for="fusingcostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="fusingconsumption" type="text" class="validate"><label for="fusingconsumption">pairs</label></div></td>
+                  <td>Total fusing cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addfusing(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Other trims</i></th></tr>
                 <tr id="other_trims">
                     <th>S no.</th>
                     <th colspan="2">Trim name</th>
-                    <th>Consumption</th>
+                    <th colspan="2">Consumption</th>
                     <th>Cost/Unit</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='othertrim_form'>
+                  <td id='othertrimserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><input id="othertrimname" type="text" class="validate"><label for="othertrimname">trimname</label></div></td>
+                  <td colspan="2"><div class="input-field col s12"><input id="othertrimconsumption" type="text" class="validate"><label for="othertrimconsumption">consumption</label></div></td>
+                  <td><div class="input-field col s12"><input id="othertrimcostperunit" type="text" class="validate"><label for="fusingcostperunit">cost/unit</label></div></td>
+                  <td>Total cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addothertrim(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
                 <tr><th colspan="10" style="background-color:grey;">Embroidery</th></tr>
                 <tr id="Embroidery">
                    <th>S no.</th>
-                    <th>Embroidery type</th>
-                    <th>No.of stitches</th>
-                    <th>Cost/(1000 stich)</th>
+                    <th colspan="2">Embroidery type</th>
+                    <th colspan="2">No.of stitches</th>
+                    <th colspan="2">Cost/(1000 stich)</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id='embroidery_form'>
+                  <td id='embroideryserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='embroiderytype' class="browser-default"><option value="" disabled selected>Embroidery type</option><option value="machine">machine</option><option value="hand">hand</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><input id="embroiderystitches" type="text" class="validate"><label for="embroiderystitches">no. of stitches</label></div></td>
+                  <td colspan="2"><div class="input-field col s12"><input id="costper1000stitches" type="text" class="validate"><label for="costper1000stitches">cost/1000 stitch</label></div></td>
+                  <td>Total cost</td>
+                </tr>
+
+                <tr><th colspan="10"><a onclick="addembroidery(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10" style="background-color:grey;">Art Work</th></tr>
                 <tr id="art_works">
                     <th>S no.</th>
                     <th colspan="2">Artwork Size</th>
                     <th colspan="2">Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id="artwork_form">
+                  <td id="artworkserialno">1</td>
+                  <td colspan="2"><div class="input-field col s12"><input id="artworksize" type="text" class="validate"><label for="artworksize">size</label></div></td>
+                  <td colspan="2"><div class="input-field col s12"><input id="artworkcost" type="text" class="validate"><label for="artworkcost">Cost</label></div></td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addartwork(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10" style="background-color:grey;">Labels</th></tr>
                 <tr><th colspan="10"><i>Main Label</i></th></tr>
                 <tr id="main_label">
                    <th>S no.</th>
-                    <th>Label type</th>
-                    <th>Text type</th>
+                    <th colspan="2">Label type</th>
+                    <th colspan="2">Text type</th>
                     <th>Dimension</th>
                     <th>Cost/Unit</th>
                     <th>No. of piece</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id="mainlabel_form">
+                  <td id="mainlabelserialno">1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='mainlabeltype' class="browser-default"><option value="" disabled selected>Label type</option><option value="non woven">non woven</option><option value="woven">woven</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='mainlabeltexttype' class="browser-default"><option value="" disabled selected>Text type</option><option value="woven">woven</option><option value="embroidered">embroidered</option><option value="printed">printed</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="mainlabeldimension" type="text" class="validate"><label for="mainlabeldimension">lxb</label></div></td>
+                  <td><div class="input-field col s12"><input id="mainlabelcostperunit" type="text" class="validate"><label for="mainlabelcostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="mainlabelpieces" type="text" class="validate"><label for="mainlabelpieces">pcs</label></div></td>
+                  <td>Total cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addmainlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>SCOO label</i></th></tr>
                 <tr id="scoo_label">
                    <th>S no.</th>
-                    <th>Label type</th>
-                    <th>Text type</th>
+                    <th colspan="2">Label type</th>
+                    <th colspan="2">Text type</th>
                     <th>Dimension</th>
                     <th>Cost/Unit</th>
                     <th>No. of piece</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id="scoolabel_form">
+                  <td id="scoolabelserialno">1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='scoolabeltype' class="browser-default"><option value="" disabled selected>Label type</option><option value="non woven">non woven</option><option value="woven">woven</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='scoolabeltexttype' class="browser-default"><option value="" disabled selected>Text type</option><option value="woven">woven</option><option value="embroidered">embroidered</option><option value="printed">printed</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="scoolabeldimension" type="text" class="validate"><label for="scoolabeldimension">lxb</label></div></td>
+                  <td><div class="input-field col s12"><input id="scoolabelcostperunit" type="text" class="validate"><label for="scoolabelcostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="scoolabelpieces" type="text" class="validate"><label for="scoolabelpieces">pcs</label></div></td>
+                  <td>Total cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addscoolabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Wash Care label</i></th></tr>
                 <tr id="wash_care_label">
                    <th>S no.</th>
-                    <th>Label type</th>
-                    <th>Text type</th>
+                    <th colspan="2">Label type</th>
+                    <th colspan="2">Text type</th>
                     <th>Dimension</th>
                     <th>Cost/Unit</th>
                     <th>No. of piece</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id="washlabel_form">
+                  <td id="washlabelserialno">1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='washlabeltype' class="browser-default"><option value="" disabled selected>Label type</option><option value="non woven">non woven</option><option value="woven">woven</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='washlabeltexttype' class="browser-default"><option value="" disabled selected>Text type</option><option value="woven">woven</option><option value="embroidered">embroidered</option><option value="printed">printed</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="washlabeldimension" type="text" class="validate"><label for="washlabeldimension">lxb</label></div></td>
+                  <td><div class="input-field col s12"><input id="washlabelcostperunit" type="text" class="validate"><label for="washlabelcostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="washlabelpieces" type="text" class="validate"><label for="washlabelpieces">pcs</label></div></td>
+                  <td>Total cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addwashlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Cost label</i></th></tr>
                 <tr id="cost_label">
                    <th>S no.</th>
-                    <th>Label type</th>
-                    <th>Text type</th>
+                    <th colspan="2">Label type</th>
+                    <th colspan="2">Text type</th>
                     <th>Dimension</th>
                     <th>Cost/Unit</th>
                     <th>No. of piece</th>
                     <th>Total Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id="costlabel_form">
+                  <td id="costlabelserialno">1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='costlabeltype' class="browser-default"><option value="" disabled selected>Label type</option><option value="cardboard">cardboard</option><option value="paper">paper</option><option value="non woven">non woven</option><option value="woven">woven</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='costlabeltexttype' class="browser-default"><option value="" disabled selected>Text type</option><option value="woven">woven</option><option value="embroidered">embroidered</option><option value="printed">printed</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="costlabeldimension" type="text" class="validate"><label for="scoolabeldimension">lxb</label></div></td>
+                  <td><div class="input-field col s12"><input id="costlabelcostperunit" type="text" class="validate"><label for="costlabelcostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="costlabelpieces" type="text" class="validate"><label for="costlabelpieces">pcs</label></div></td>
+                  <td>Total cost</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addcostlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10" style="background-color:grey;">Other</th></tr>
                 <tr id="other">
+                    <th>S No.</th>
                     <th colspan="3">Name</th>
                     <th colspan="3">Description</th>
                     <th colspan="3">Cost</th>
                 </tr>
-                <tr><th colspan="10"><a class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+                <tr id="otherform">
+                    <td id="otherserialno">1</td>
+                    <td colspan="3"><div class="input-field col s12"><input id="othername" type="text" class="validate"><label for="othername">name</label></div></td>
+                    <td colspan="3"><div class="input-field col s12"><input id="otherdescription" type="text" class="validate"><label for="otherdescription">description</label></div></td>
+                    <td colspan="3"><div class="input-field col s12"><input id="othercost" type="text" class="validate"><label for="othercost">cost</label></div></td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addother(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="7">TTL cost(if Any)</th><th colspan="3"><div class="input-field col s12"><input id="ttlcost" type="number" step="0.01" class="validate"><label for="ttlcost">Cost</label></div></th></tr>
                 <tr><th colspan="7">Stitching</th><th colspan="3"><div class="input-field col s12"><input id="stitching" type="number" step="0.01" class="validate"><label for="stitching">Cost</label></div></th></tr>
                 <tr><th colspan="7">Packaging Cost</th><th colspan="3"><div class="input-field col s12"><input id="packaging_cost" type="number" step="0.01" class="validate"><label for="packaging_cost">Cost</label></div></th></tr>
@@ -277,6 +372,7 @@
     var fabricperunitcost = form.querySelector('#fabricperunitcost').value;
     var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
     var newRow = document.createElement("tr");
+    newRow.setAttribute('class','knitfabricdata');
     newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+fabrictotal+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#fabricserialno').innerText = parseInt(serialno)+1;
@@ -302,6 +398,7 @@
     var fabricperunitcost = form.querySelector('#wovenfabricperunitcost').value;
     var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
     var newRow = document.createElement("tr");
+    newRow.setAttribute('class','wovenfabricdata');
     newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+fabrictotal+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#wovenfabricserialno').innerText = parseInt(serialno)+1;
@@ -337,6 +434,7 @@
     var buttontotalcost = parseInt(consumption)*buttoncostperunit;
     buttontotalcost = buttontotalcost.toFixed(2);
     var newRow = document.createElement("tr");
+    newRow.setAttribute('class','buttondata');
     newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ buttontype +'</td><td>'+ buttonsize +'</td><td>'+consumption+'</td><td colspan="2">'+costunit+'</td><td>'+buttoncost+'</td><td>'+buttoncostperunit+'</td><td>'+buttontotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#buttonserialno').innerText = parseInt(serialno)+1;
@@ -345,6 +443,231 @@
     form.querySelector('#buttonconsumption').value='';
     form.querySelector('#buttoncostunit').value='';
     form.querySelector('#buttoncost').value='';
+  }
+
+  function addzipper(event){
+    var form = document.getElementById('zipper_form');
+    var serialno = form.querySelector('#zipperserialno').innerText;
+    var zippertype = form.querySelector('#zippertype').value;
+    var zipperlength = form.querySelector('#zipperlength').value;
+    var zipperconsumption = form.querySelector('#zipperconsumption').value;
+    var zippercostperunit = form.querySelector('#zippercostperunit').value;
+    var zippertotalcost = parseFloat(zipperconsumption)*parseFloat(zippercostperunit);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','zipperdata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ zippertype +'</td><td>'+ zipperlength +'</td><td>'+zipperconsumption+'</td><td>'+zippercostperunit+'</td><td>'+zippertotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#zipperserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#zippertype').value='';
+    form.querySelector('#zipperlength').value='';
+    form.querySelector('#zipperconsumption').value='';
+    form.querySelector('#zippercostperunit').value='';
+  }
+
+  function addhook(event){
+    var form = document.getElementById('hook_form');
+    var serialno = form.querySelector('#hookserialno').innerText;
+    var hooktype = form.querySelector('#hooktype').value;
+    var hooksize = form.querySelector('#hooksize').value;
+    var hookcostperpair = form.querySelector('#hookcostperpair').value;
+    var hookconsumption = form.querySelector('#hookconsumption').value;
+    var hooktotalcost = parseFloat(hookconsumption)*parseFloat(hookcostperpair);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','hookdata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ hooktype +'</td><td colspan="2">'+ hooksize +'</td><td>'+hookcostperpair+'</td><td>'+hookconsumption+'</td><td>'+hooktotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#hookserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#hooktype').value='';
+    form.querySelector('#hooksize').value='';
+    form.querySelector('#hookconsumption').value='';
+    form.querySelector('#hookcostperpair').value='';
+  }
+
+  function addsnap(event){
+    var form = document.getElementById('snap_form');
+    var serialno = form.querySelector('#snapserialno').innerText;
+    var snapmaterial = form.querySelector('#snapmaterial').value;
+    var snapligne = form.querySelector('#snapligne').value;
+    var snapcostperpair = form.querySelector('#snapcostperpair').value;
+    var snapconsumption = form.querySelector('#snapconsumption').value;
+    var snaptotalcost = parseFloat(snapconsumption)*parseFloat(snapcostperpair);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','snapdata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ snapmaterial +'</td><td colspan="2">'+ snapligne +'</td><td>'+snapcostperpair+'</td><td>'+snapconsumption+'</td><td>'+snaptotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#snapserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#snapmaterial').value='';
+    form.querySelector('#snapligne').value='';
+    form.querySelector('#snapconsumption').value='';
+    form.querySelector('#snapcostperpair').value='';
+  }
+
+  function addfusing(event){
+    var form = document.getElementById('fusing_form');
+    var serialno = form.querySelector('#fusingserialno').innerText;
+    var fusingtype = form.querySelector('#fusingtype').value;
+    var fusingdescription = form.querySelector('#fusingdescription').value;
+    var fusingcostperunit = form.querySelector('#fusingcostperunit').value;
+    var fusingconsumption = form.querySelector('#fusingconsumption').value;
+    var fusingtotalcost = parseFloat(fusingconsumption)*parseFloat(fusingcostperunit);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','fusingdata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ fusingtype +'</td><td colspan="2">'+ fusingdescription +'</td><td>'+fusingcostperunit+'</td><td>'+fusingconsumption+'</td><td>'+fusingtotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#fusingserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#fusingtype').value='';
+    form.querySelector('#fusingdescription').value='';
+    form.querySelector('#fusingcostperunit').value='';
+    form.querySelector('#fusingconsumption').value='';
+  }
+
+  function addothertrim(event){
+    var form = document.getElementById('othertrim_form');
+    var serialno = form.querySelector('#othertrimserialno').innerText;
+    var othertrimname = form.querySelector('#othertrimname').value;
+    var othertrimconsumption = form.querySelector('#othertrimconsumption').value;
+    var othertrimcostperunit = form.querySelector('#othertrimcostperunit').value;
+    var othertrimtotalcost = parseFloat(othertrimconsumption)*parseFloat(othertrimcostperunit);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','othertrimdata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ othertrimname +'</td><td colspan="2">'+ othertrimconsumption +'</td><td>'+othertrimcostperunit+'</td><td>'+othertrimtotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#othertrimserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#othertrimname').value='';
+    form.querySelector('#othertrimconsumption').value='';
+    form.querySelector('#othertrimcostperunit').value='';
+  }
+
+  function addembroidery(event){
+      var form = document.getElementById('embroidery_form');
+      var serialno = form.querySelector('#embroideryserialno').innerText;
+      var embroiderytype = form.querySelector('#embroiderytype').value;
+      var embroiderystitches = form.querySelector('#embroiderystitches').value;
+      var costper1000stitches = form.querySelector('#costper1000stitches').value;
+      var totalembroiderycost = parseFloat(costper1000stitches)*parseFloat(embroiderystitches)/1000;
+      var newRow = document.createElement("tr");
+      newRow.setAttribute('class','embroiderydata');
+      newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ embroiderytype +'</td><td colspan="2">'+ embroiderystitches +'</td><td colspan="2">'+costper1000stitches+'</td><td>'+totalembroiderycost+'</td>';
+      form.parentNode.insertBefore(newRow,form);
+      form.querySelector('#embroideryserialno').innerText = parseInt(serialno)+1;
+      form.querySelector('#embroiderytype').value="";
+      form.querySelector('#embroiderystitches').value="";
+      form.querySelector('#costper1000stitches').value="";
+  }
+
+  function addartwork(event){
+    var form = document.getElementById('artwork_form');
+    var serialno = form.querySelector('#artworkserialno').innerText;
+    var artworksize = form.querySelector('#artworksize').value;
+    var artworkcost = form.querySelector('#artworkcost').value;
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','artworkdata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ artworksize +'</td><td colspan="2">'+ artworkcost +'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#artworkserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#artworksize').value='';
+    form.querySelector('#artworkcost').value='';
+
+  }
+
+  function addmainlabel(event){
+    var form = document.getElementById('mainlabel_form');
+    var serialno = form.querySelector('#mainlabelserialno').innerText;
+    var mainlabeltype = form.querySelector('#mainlabeltype').value;
+    var mainlabeltexttype = form.querySelector('#mainlabeltexttype').value;
+    var mainlabeldimension = form.querySelector('#mainlabeldimension').value;
+    var mainlabelcostperunit = form.querySelector('#mainlabelcostperunit').value;
+    var mainlabelpieces = form.querySelector('#mainlabelpieces').value;
+    var maintotalcost = parseFloat(mainlabeldimension)*parseFloat(mainlabelcostperunit)*parseFloat(mainlabelpieces);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','mainlabeldata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ mainlabeltype +'</td><td colspan="2">'+ mainlabeltexttype +'</td><td>'+ mainlabeldimension +'</td><td>'+mainlabelcostperunit+'</td><td>'+mainlabelpieces+'</td><td>'+maintotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#mainlabelserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#mainlabeltype').value = '';
+    form.querySelector('#mainlabeltexttype').value= '';
+    form.querySelector('#mainlabeldimension').value = '';
+    form.querySelector('#mainlabelcostperunit').value='';
+    form.querySelector('#mainlabelpieces').value = '';
+
+  }
+  function addscoolabel(event){
+    var form = document.getElementById('scoolabel_form');
+    var serialno = form.querySelector('#scoolabelserialno').innerText;
+    var scoolabeltype = form.querySelector('#scoolabeltype').value;
+    var scoolabeltexttype = form.querySelector('#scoolabeltexttype').value;
+    var scoolabeldimension = form.querySelector('#scoolabeldimension').value;
+    var scoolabelcostperunit = form.querySelector('#scoolabelcostperunit').value;
+    var scoolabelpieces = form.querySelector('#scoolabelpieces').value;
+    var scoototalcost = parseFloat(scoolabeldimension)*parseFloat(scoolabelcostperunit)*parseFloat(scoolabelpieces);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','scoolabeldata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ scoolabeltype +'</td><td colspan="2">'+ scoolabeltexttype +'</td><td>'+ scoolabeldimension +'</td><td>'+scoolabelcostperunit+'</td><td>'+scoolabelpieces+'</td><td>'+scoototalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#scoolabelserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#scoolabeltype').value = '';
+    form.querySelector('#scoolabeltexttype').value= '';
+    form.querySelector('#scoolabeldimension').value = '';
+    form.querySelector('#scoolabelcostperunit').value='';
+    form.querySelector('#scoolabelpieces').value = '';
+
+  }
+  function addwashlabel(event){
+    var form = document.getElementById('washlabel_form');
+    var serialno = form.querySelector('#washlabelserialno').innerText;
+    var washlabeltype = form.querySelector('#washlabeltype').value;
+    var washlabeltexttype = form.querySelector('#washlabeltexttype').value;
+    var washlabeldimension = form.querySelector('#washlabeldimension').value;
+    var washlabelcostperunit = form.querySelector('#washlabelcostperunit').value;
+    var washlabelpieces = form.querySelector('#washlabelpieces').value;
+    var washtotalcost = parseFloat(washlabeldimension)*parseFloat(washlabelcostperunit)*parseFloat(washlabelpieces);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','washlabeldata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ washlabeltype +'</td><td colspan="2">'+ washlabeltexttype +'</td><td>'+ washlabeldimension +'</td><td>'+washlabelcostperunit+'</td><td>'+washlabelpieces+'</td><td>'+washtotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#washlabelserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#washlabeltype').value = '';
+    form.querySelector('#washlabeltexttype').value= '';
+    form.querySelector('#washlabeldimension').value = '';
+    form.querySelector('#washlabelcostperunit').value='';
+    form.querySelector('#washlabelpieces').value = '';
+  }
+  function addcostlabel(event){
+    var form = document.getElementById('costlabel_form');
+    var serialno = form.querySelector('#costlabelserialno').innerText;
+    var costlabeltexttype = form.querySelector('#costlabeltexttype').value;
+    var costlabeltype = form.querySelector('#costlabeltype').value;
+    var costlabeldimension = form.querySelector('#costlabeldimension').value;
+    var costlabelcostperunit = form.querySelector('#costlabelcostperunit').value;
+    var costlabelpieces = form.querySelector('#costlabelpieces').value;
+    var costtotalcost = parseFloat(costlabeldimension)*parseFloat(costlabelcostperunit)*parseFloat(costlabelpieces);
+    var newRow = document.createElement("tr");
+    newRow.setAttribute('class','costlabeldata');
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ costlabeltype +'</td><td colspan="2">'+ costlabeltexttype +'</td><td>'+ costlabeldimension +'</td><td>'+costlabelcostperunit+'</td><td>'+costlabelpieces+'</td><td>'+costtotalcost+'</td>';
+    form.parentNode.insertBefore(newRow,form);
+    form.querySelector('#costlabelserialno').innerText = parseInt(serialno)+1;
+    form.querySelector('#costlabeltype').value = '';
+    form.querySelector('#costlabeltexttype').value= '';
+    form.querySelector('#costlabeldimension').value = '';
+    form.querySelector('#costlabelcostperunit').value='';
+    form.querySelector('#costlabelpieces').value = '';
+  }
+
+  function addother(event){
+   var form = document.getElementById('otherform');
+   var serialno = form.querySelector('#otherserialno').innerText;
+   var name = form.querySelector('#othername').value;
+   var otherdescription = form.querySelector('#otherdescription').value;
+   var othercost = form.querySelector('#othercost').value;
+   var newRow = document.createElement("tr");
+   newRow.setAttribute('class','otherdata');
+   newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="3">'+ name +'</td><td colspan="3">'+ otherdescription +'</td><td colspan="3">'+ othercost +'</td>';
+   form.parentNode.insertBefore(newRow,form);
+   form.querySelector('#otherserialno').innerText = parseInt(serialno)+1;
+   form.querySelector('#othername').value='';
+   form.querySelector('#otherdescription').value='';
+   form.querySelector('#othercost').value='';
+
   }
 
 
