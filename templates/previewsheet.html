@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CreateSheet</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">{{user.email}}</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="collapsible.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="row" style="align-content: center;text-align: center;padding-left: 8%;padding-right: 8%;">
+    <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
+        <table id=costsheettable>
+            <tr><th colspan="10" style="background-color:grey;">Fabric Details</th></tr>
+            <tr><th colspan="10"><i>Knit</i></th></tr>
+            <tr id="knit_fabric">
+                <th>S no.</th>
+                <th>Fabric name</th>
+                <th>GSM</th>
+                <th>Content</th>
+                <th>Count</th>
+                <th>Construction</th>
+                <th>Total width</th>
+                <th>Consumption</th>
+                <th>Cost/unit</th>
+                <th>Total Cost</th>
+            </tr>
+            <tr><th colspan="10"><a onclick="addknitfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Woven</i></th></tr>
+            <tr id="woven_fabric">
+                <th>S no.</th>
+                <th>Fabric name</th>
+                <th>GSM</th>
+                <th>Content</th>
+                <th>Count</th>
+                <th>Construction</th>
+                <th>Total width</th>
+                <th>Consumption</th>
+                <th>Cost/unit</th>
+                <th>Total Cost</th>
+            </tr>
+            <tr><th colspan="10"><a onclick="addwovenfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10" style="background-color:grey;">Trims</th></tr>
+            <tr><th colspan="10"><i>Button</i></th></tr>
+            <tr id="button_headings">
+                <th>S no.</th>
+                <th colspan="2">Button Type</th>
+                <th>Button Size</th>
+                <th>Consumption(pcs)</th>
+                <th colspan="2">Rs/pc, Rs/dozen, Rs/gross</th>
+                <th>Cost</th>
+                <th>Cost/Unit</th>
+                <th>Total Cost</th>
+
+            </tr>
+            <tr><th colspan="10"><a onclick='addbutton(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Zipper</i></th></tr>
+            <tr id="zipper_headings">
+               <th>S no.</th>
+                <th colspan="2">Zipper type</th>
+                <th>Zipper length</th>
+                <th>Consumption</th>
+                <th>Cost/Unit</th>
+                <th>Total Cost</th>
+            </tr>
+            <tr><th colspan="10"><a onclick="addzipper(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Hook and Eye</i></th></tr>
+            <tr id="hook_and_eye_headings">
+               <th>S no.</th>
+                <th colspan="2">Hook and eye type</th>
+                <th colspan="2">Size</th>
+                <th>Cost/pair</th>
+                <th>Consumption</th>
+                <th>Total Cost</th>
+            </tr>
+            <tr><th colspan="10"><a onclick="addhook(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Snap Button</i></th></tr>
+            <tr id="snap_button_headings">
+               <th>S no.</th>
+                <th colspan="2">Button material</th>
+                <th colspan="2">Linge</th>
+                <th>Cost/pair</th>
+                <th>Consumption</th>
+                <th>Total Cost</th>
+            </tr>
+            <tr><th colspan="10"><a onclick="addsnap(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Fusing</i></th></tr>
+            <tr id="fusing_headings">
+               <th>S no.</th>
+                <th colspan="2">Fusing Type</th>
+                <th colspan="2">Description</th>
+                <th>Cost/unit</th>
+                <th>Consumption</th>
+                <th>Total</th>
+            </tr>
+            <tr><th colspan="10"><a onclick="addfusing(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Other trims</i></th></tr>
+            <tr id="other_trims">
+                <th>S no.</th>
+                <th colspan="2">Trim name</th>
+                <th colspan="2">Consumption</th>
+                <th>Cost/Unit</th>
+                <th>Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addothertrim(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
+            <tr><th colspan="10" style="background-color:grey;">Embroidery</th></tr>
+            <tr id="Embroidery">
+               <th>S no.</th>
+                <th colspan="2">Embroidery type</th>
+                <th colspan="2">No.of stitches</th>
+                <th colspan="2">Cost/(1000 stich)</th>
+                <th>Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addembroidery(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10" style="background-color:grey;">Art Work</th></tr>
+            <tr id="art_works">
+                <th>S no.</th>
+                <th colspan="2">Artwork Size</th>
+                <th colspan="2">Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addartwork(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10" style="background-color:grey;">Labels</th></tr>
+            <tr><th colspan="10"><i>Main Label</i></th></tr>
+            <tr id="main_label">
+               <th>S no.</th>
+                <th colspan="2">Label type</th>
+                <th colspan="2">Text type</th>
+                <th>Dimension</th>
+                <th>Cost/Unit</th>
+                <th>No. of piece</th>
+                <th>Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addmainlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>SCOO label</i></th></tr>
+            <tr id="scoo_label">
+               <th>S no.</th>
+                <th colspan="2">Label type</th>
+                <th colspan="2">Text type</th>
+                <th>Dimension</th>
+                <th>Cost/Unit</th>
+                <th>No. of piece</th>
+                <th>Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addscoolabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Wash Care label</i></th></tr>
+            <tr id="wash_care_label">
+               <th>S no.</th>
+                <th colspan="2">Label type</th>
+                <th colspan="2">Text type</th>
+                <th>Dimension</th>
+                <th>Cost/Unit</th>
+                <th>No. of piece</th>
+                <th>Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addwashlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10"><i>Cost label</i></th></tr>
+            <tr id="cost_label">
+               <th>S no.</th>
+                <th colspan="2">Label type</th>
+                <th colspan="2">Text type</th>
+                <th>Dimension</th>
+                <th>Cost/Unit</th>
+                <th>No. of piece</th>
+                <th>Total Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addcostlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="10" style="background-color:grey;">Other</th></tr>
+            <tr id="other">
+                <th>S No.</th>
+                <th colspan="3">Name</th>
+                <th colspan="3">Description</th>
+                <th colspan="3">Cost</th>
+            </tr>
+
+            <tr><th colspan="10"><a onclick="addother(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+            <tr><th colspan="7">TTL cost(if Any)</th><th id='ttlcost' colspan="3"></th></tr>
+            <tr><th colspan="7">Stitching</th><th id="stitching" colspan="3"></th></tr>
+            <tr><th colspan="7">Packaging Cost</th><th id="packaging_cost" colspan="3"></th></tr>
+            <tr><th colspan="7">Finishing Cost</th><th id="finishing_cost" colspan="3"></th></tr>
+            <tr><th colspan="7">Total</th><th id="total" colspan="3"></th></tr>
+            <tr><th colspan="7">Mark up</th><th id="markup" colspan="3"></th></tr>
+            <tr><th colspan="7">Factory FOB</th><th id="factory_fob" colspan="3"></th></tr>
+            <tr><th colspan="7"><h5>Client FOB</h5></th><th id="client_fob" colspan="3"></th></tr>
+        </table>
+    </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var knitfabricdata = window.localStorage.getItem('knitfabric');
+  var wovenfabricdata = window.localStorage.getItem('wovenfabricdata');
+  var buttondata = window.localStorage.getItem('buttondata');
+  
+  });
+</script>
+</body>
+</html>

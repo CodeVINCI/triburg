@@ -26,5 +26,6 @@ urlpatterns = [
     path('signup/', SignupPage.as_view()),
     path('login/', auth_views.LoginView.as_view(template_name='login.html')),
     path('signuprequests/', SignupRequestpage.as_view()),
+    path('approverequest/', views.approverequest),
     path('accounts/', include('account.urls')),
 ]
