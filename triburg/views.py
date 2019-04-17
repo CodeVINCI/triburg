@@ -50,7 +50,7 @@ class SignupRequestpage(TemplateView):
 def approverequest(request):
     if request.user.is_admin:
         id = request.GET['id']
-        return redirect('/signuprequests')
+        return redirect('/home')
     else:
         return HttpResponse('<h1>Not Admin</h1>')
 
