@@ -24,7 +24,7 @@
         <div class="row" style="text-align: center;align-content: center;">
             <div class="row">
         <div class="input-field col s6" style="padding-left: 10%;">
-            <select>
+            <select id='buyers'>
                 <option value="" disabled selected>Buyers</option>
                 {% for buyer in buyers %}
                 <option value="{{buyer.buyer_name}}">{{buyer.buyer_name}}</option>
@@ -37,7 +37,7 @@
         </div>
         </div>
         <div class="row" style="padding-right: 10%;padding-left: 10%;">
-            <input placeholder="Date of Delivery" type="text" class="datepicker">
+            <input id="dateofdelivery" placeholder="Date of Delivery" type="text" class="datepicker">
         </div>
         </div>
         <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
@@ -344,7 +344,7 @@
         </div>
 
         <div class="row">
-            <a class="waves-effect waves-light btn-large blue"><i class="material-icons right">save</i>save</a>
+            <a onclick="savesheet(event)" class="waves-effect waves-light btn-large blue"><i class="material-icons right">save</i>save</a>
         </div>
     </div>
 </div>
@@ -670,7 +670,80 @@
 
   }
 
-
+  function savesheet(event){
+    var knitfabricdata = document.querySelectorAll('.knitfabricdata');
+    var wovenfabricdata = document.querySelectorAll('.wovenfabricdata');
+    var buttondata = document.querySelector('.buttondata');
+    var zipperdata = document.querySelectorAll('.zipperdata');
+    var hookdata = document.querySelectorAll('.hookdata');
+    var snapdata = document.querySelectorAll('.snapdata');
+    var fusingdata = document.querySelectorAll('.fusingdata');
+    var othertrimsdata = document.querySelectorAll('.othertrimsdata');
+    var embroiderydata = document.querySelectorAll('.embroiderydata');
+    var artworkdata = document.querySelectorAll('.artworkdata');
+    var mainlabeldata = document.querySelectorAll('.mainlabeldata');
+    var scoolabeldata = document.querySelectorAll('.scoolabeldata');
+    var washlabeldata = document.querySelectorAll('.washlabeldata');
+    var costlabeldata = document.querySelectorAll('.costlabeldata');
+    var otherdata = document.querySelectorAll('.otherdata');
+    var ttlcost = document.getElementById('ttlcost').value;
+    var stitching = document.getElementById('stitching').value;
+    var packaging_cost = document.getElementById('packaging_cost').value;
+    var finishing_cost = document.getElementById('finishing_cost').value;
+    var total = document.getElementById('total').value;
+    var markup = document.getElementById('markup').value;
+    var factory_fob = document.getElementById('factory_fob').value;
+    var client_fob = document.getElementById('client_fob').value;
+    window.localStorage.setItem('buyer',document.getElementById('buyers').value);
+    window.localStorage.setItem('styleno',document.getElementById('styleno').value);
+    window.localStorage.setItem('dateofdelivery',document.getElementById('dateofdelivery').value);
+    var knitfabric = [];
+    var i;
+    for (i = 0; i < knitfabricdata.length; i++) {
+     var elements = knitfabricdata[i].querySelectorAll('td');
+     var data = [];
+     var j;
+     for(j=0; j< elements.length;j++){
+       data.push(elements[j].innerText);
+     }
+     knitfabric.push(data);
+     }
+     window.localStorage.setItem('knitfabricdata',knitfabric);
+     var wovenfabric=[]
+     for (i = 0; i < wovenfabricdata.length; i++) {
+      var elements = wovenfabricdata[i].querySelectorAll('td');
+      var data = [];
+      var j;
+      for(j=0; j< elements.length;j++){
+        data.push(elements[j].innerText);
+      }
+      wovenfabric.push(data);
+      }
+      window.localStorage.setItem('wovenfabricdata',wovenfabric);
+      var buttons = []
+      for (i = 0; i < buttondata.length; i++) {
+       var elements = buttondata[i].querySelectorAll('td');
+       var data = [];
+       var j;
+       for(j=0; j< elements.length;j++){
+         data.push(elements[j].innerText);
+       }
+       buttons.push(data);
+       }
+       window.localStorage.setItem('buttondata',buttons);
+       var zippers = []
+       for (i = 0; i < zipperdata.length; i++) {
+        var elements = zipperdata[i].querySelectorAll('td');
+        var data = [];
+        var j;
+        for(j=0; j< elements.length;j++){
+          data.push(elements[j].innerText);
+        }
+        zippers.push(data);
+        }
+        window.localStorage.setItem('zipperdata',zippers);
+        window.location.href = '/accounts/previewcostsheet';
+  }
 
 </script>
 </body>

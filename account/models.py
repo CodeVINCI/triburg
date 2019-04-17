@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import UserManager,AbstractUser
+#from django.contrib.postgres.fields import JSONField
 # Create your models here.
 
 
@@ -26,3 +27,10 @@ class Buyer(models.Model):
 
     def __str__(self):
         return self.buyer_name
+
+'''
+class Costsheet(models.Model):
+    creator = models.ForeignKey(User,on_delete=models.CASCADE)
+    madeon = models.DateTimeField(null=True,blank=True)
+    sheet = JSONField()
+'''

@@ -11,3 +11,9 @@ class CreateSheet(TemplateView):
     def get(self, request, *wargs, **kwargs):
         args = {'buyers': Buyer.objects.all().order_by('buyer_name')}
         return render(request,self.template_name,args)
+
+class PreviewSheet(TemplateView):
+    template_name = 'previewsheet.html'
+    def get(self, request, *wargs, **kwargs):
+        args = {}
+        return render(request,self.template_name,args)
