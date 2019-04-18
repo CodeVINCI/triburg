@@ -690,24 +690,7 @@
     var stitching = document.getElementById('stitching').value;
     var packaging_cost = document.getElementById('packaging_cost').value;
     var finishing_cost = document.getElementById('finishing_cost').value;
-    var subtotal = document.querySelectorAll('.subcost');
-    var k;
-    var total;
-    for(k=0;k< subtotal.length; k++){
-      total = total+parseFloat(subtotal[k].innerText);
-    }
-    if(ttlcost){
-      total = total + parseFloat(ttlcost);
-    }
-    if(stitching){
-      total = total+parseFloat(stitching);
-    }
-    if(packaging_cost){
-      total = total + parseFloat(packaging_cost);
-    }
-    if(finishing_cost){
-      total = total+parseFloat(finishing_cost);
-    }
+    var total = document.getElementById('total').value;
     var markup = document.getElementById('markup').value;
     var factory_fob = document.getElementById('factory_fob').value;
     var client_fob = document.getElementById('client_fob').value;
