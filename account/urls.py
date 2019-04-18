@@ -7,4 +7,5 @@ path('createcostsheet/', CreateSheet.as_view()),
 path('previewcostsheet/', PreviewSheet.as_view()),
 path('profile/', Profile.as_view()),
 path('savecostsheet/', views.savecostsheet),
+path('sendcostsheet/', views.sendcostsheet),
 ]
