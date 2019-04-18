@@ -914,7 +914,7 @@
                xhr.onreadystatechange = function () {
                    if (xhr.readyState === 4 && xhr.status === 200) {
                        alert('cost sheet has been saved');
-                       window.locaiton.href  = '/accounts/profile';
+                       window.location.href  = '/accounts/profile';
                    }
                };
                var data = JSON.stringify(costsheet);
