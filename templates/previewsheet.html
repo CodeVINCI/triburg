@@ -363,8 +363,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
 function sendemail(event){
-  var this = event.target;
-  var key = this.getAttribute('data');
+  var t = event.target;
+  var key = t.getAttribute('data');
   var email = document.getElementById('icon_email').value;
   var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange = function() {
