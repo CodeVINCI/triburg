@@ -22,7 +22,7 @@
 <h5>Your cost sheets</h5>
 {% if costsheets %}
 {% for costsheet in costsheets%}
-<a href="/accounts/previewcostsheet/?key={{costsheet.key}}">{{costsheet.key}}</a>
+<a href="/accounts/previewcostsheet/?key={{costsheet.key}}" target="_blank">{{costsheet.key}}</a>
 {% endfor %}
 {% endif %}
 {% endif %}
