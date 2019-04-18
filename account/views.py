@@ -41,3 +41,17 @@ def savecostsheet(request):
         return JsonResponse({"success":1})
     else:
         return JsonResponse({"success":0})
+
+def sendcostsheet(request):
+    key = request.GET['key']
+    email = request.GET['email']
+    if key and request.user.is_authenticated:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login("serveremail96@gmail.com", "kinley@123")
+        msg = request.user.email +' has shared a costsheet http://139.59.58.219/accounts/previewcostsheet/?key='+key
+        server.sendmail("serveremail96@gmail.com",email, msg)
+        server.quit()
+        return JsonResponse({'success':1})
+    else:
+        return JsonResponse({'success':0})    

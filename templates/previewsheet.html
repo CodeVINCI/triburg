@@ -341,18 +341,40 @@
 
              </tr>
             {% endfor %}
-
-            <tr><th colspan="7">TTL cost(if Any)</th><th id='ttlcost' colspan="3"></th></tr>
-            <tr><th colspan="7">Stitching</th><th id="stitching" colspan="3"></th></tr>
-            <tr><th colspan="7">Packaging Cost</th><th id="packaging_cost" colspan="3"></th></tr>
-            <tr><th colspan="7">Finishing Cost</th><th id="finishing_cost" colspan="3"></th></tr>
-            <tr><th colspan="7">Total</th><th id="total" colspan="3"></th></tr>
-            <tr><th colspan="7">Mark up</th><th id="markup" colspan="3"></th></tr>
-            <tr><th colspan="7">Factory FOB</th><th id="factory_fob" colspan="3"></th></tr>
-            <tr><th colspan="7"><h5>Client FOB</h5></th><th id="client_fob" colspan="3"></th></tr>
+            <tr><th colspan="7">TTL cost(if Any)</th><th id='ttlcost' colspan="3">{{ttlcost}}</th></tr>
+            <tr><th colspan="7">Stitching</th><th id="stitching" colspan="3">{{stitching}}</th></tr>
+            <tr><th colspan="7">Packaging Cost</th><th id="packaging_cost" colspan="3">{{packaging_cost}}</th></tr>
+            <tr><th colspan="7">Finishing Cost</th><th id="finishing_cost" colspan="3">{{finishing_cost}}</th></tr>
+            <tr><th colspan="7">Total</th><th id="total" colspan="3">{{total}}</th></tr>
+            <tr><th colspan="7">Mark up</th><th id="markup" colspan="3">{{markup}}</th></tr>
+            <tr><th colspan="7">Factory FOB</th><th id="factory_fob" colspan="3">{{factory_fob}}</th></tr>
+            <tr><th colspan="7"><h5>Client FOB</h5></th><th id="client_fob" colspan="3">{{client_fob}}</th></tr>
         </table>
+    </div>
+    <div class="row">
+    <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_email" type="email" class="validate">
+          <label for="icon_email">Email</label>
+        </div>
+        <a onclick="sendemail(event)" data={{key}} class="waves-effect waves-light btn">share</a>
     </div>
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+function sendemail(event){
+  var this = event.target;
+  var key = this.getAttribute('data');
+  var email = document.getElementById('icon_email').value;
+  var xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       alert('sent');
+    }
+};
+xhttp.open("GET", 'accounts/sendcostsheet/?key='+key+'&email='+email, true);
+xhttp.send();
+}
+</script>
 </body>
 </html>
