@@ -21,7 +21,7 @@ class PreviewSheet(TemplateView):
     def get(self, request, *wargs, **kwargs):
         key = request.GET['key']
         sheet = Costsheet.objects.get(key=key)
-        args = json.loads(sheet.sheet)
+        args = sheet.sheet
         return render(request,self.template_name,args)
 
 class Profile(TemplateView):
