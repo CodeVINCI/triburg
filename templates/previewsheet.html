@@ -372,7 +372,7 @@ function sendemail(event){
        alert('sent');
     }
 };
-xhttp.open("GET", 'accounts/sendcostsheet/?key='+key+'&email='+email, true);
+xhttp.open("GET", 'http://139.59.58.219/accounts/sendcostsheet/?key='+key+'&email='+email, true);
 xhttp.send();
 }
 </script>

@@ -373,7 +373,7 @@
     var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','knitfabricdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+fabrictotal+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td class="subcost">'+fabrictotal+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#fabricserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#fabricname').value = '';
@@ -399,7 +399,7 @@
     var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','wovenfabricdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+fabrictotal+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td class="subcost">'+fabrictotal+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#wovenfabricserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#wovenfabricname').value = '';
@@ -435,7 +435,7 @@
     buttontotalcost = buttontotalcost.toFixed(2);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','buttondata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ buttontype +'</td><td>'+ buttonsize +'</td><td>'+consumption+'</td><td colspan="2">'+costunit+'</td><td>'+buttoncost+'</td><td>'+buttoncostperunit+'</td><td>'+buttontotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ buttontype +'</td><td>'+ buttonsize +'</td><td>'+consumption+'</td><td colspan="2">'+costunit+'</td><td>'+buttoncost+'</td><td>'+buttoncostperunit+'</td><td class="subcost">'+buttontotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#buttonserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#buttontype').value='';
@@ -455,7 +455,7 @@
     var zippertotalcost = parseFloat(zipperconsumption)*parseFloat(zippercostperunit);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','zipperdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ zippertype +'</td><td>'+ zipperlength +'</td><td>'+zipperconsumption+'</td><td>'+zippercostperunit+'</td><td>'+zippertotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ zippertype +'</td><td>'+ zipperlength +'</td><td>'+zipperconsumption+'</td><td>'+zippercostperunit+'</td><td class="subcost">'+zippertotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#zipperserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#zippertype').value='';
@@ -474,7 +474,7 @@
     var hooktotalcost = parseFloat(hookconsumption)*parseFloat(hookcostperpair);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','hookdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ hooktype +'</td><td colspan="2">'+ hooksize +'</td><td>'+hookcostperpair+'</td><td>'+hookconsumption+'</td><td>'+hooktotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ hooktype +'</td><td colspan="2">'+ hooksize +'</td><td>'+hookcostperpair+'</td><td>'+hookconsumption+'</td><td class=subcost>'+hooktotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#hookserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#hooktype').value='';
@@ -493,7 +493,7 @@
     var snaptotalcost = parseFloat(snapconsumption)*parseFloat(snapcostperpair);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','snapdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ snapmaterial +'</td><td colspan="2">'+ snapligne +'</td><td>'+snapcostperpair+'</td><td>'+snapconsumption+'</td><td>'+snaptotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ snapmaterial +'</td><td colspan="2">'+ snapligne +'</td><td>'+snapcostperpair+'</td><td>'+snapconsumption+'</td><td class="subcost">'+snaptotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#snapserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#snapmaterial').value='';
@@ -512,7 +512,7 @@
     var fusingtotalcost = parseFloat(fusingconsumption)*parseFloat(fusingcostperunit);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','fusingdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ fusingtype +'</td><td colspan="2">'+ fusingdescription +'</td><td>'+fusingcostperunit+'</td><td>'+fusingconsumption+'</td><td>'+fusingtotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ fusingtype +'</td><td colspan="2">'+ fusingdescription +'</td><td>'+fusingcostperunit+'</td><td>'+fusingconsumption+'</td><td class="subcost">'+fusingtotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#fusingserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#fusingtype').value='';
@@ -530,7 +530,7 @@
     var othertrimtotalcost = parseFloat(othertrimconsumption)*parseFloat(othertrimcostperunit);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','othertrimdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ othertrimname +'</td><td colspan="2">'+ othertrimconsumption +'</td><td>'+othertrimcostperunit+'</td><td>'+othertrimtotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ othertrimname +'</td><td colspan="2">'+ othertrimconsumption +'</td><td>'+othertrimcostperunit+'</td><td class="subcost">'+othertrimtotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#othertrimserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#othertrimname').value='';
@@ -547,7 +547,7 @@
       var totalembroiderycost = parseFloat(costper1000stitches)*parseFloat(embroiderystitches)/1000;
       var newRow = document.createElement("tr");
       newRow.setAttribute('class','embroiderydata');
-      newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ embroiderytype +'</td><td colspan="2">'+ embroiderystitches +'</td><td colspan="2">'+costper1000stitches+'</td><td>'+totalembroiderycost+'</td>';
+      newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ embroiderytype +'</td><td colspan="2">'+ embroiderystitches +'</td><td colspan="2">'+costper1000stitches+'</td><td class="subcost">'+totalembroiderycost+'</td>';
       form.parentNode.insertBefore(newRow,form);
       form.querySelector('#embroideryserialno').innerText = parseInt(serialno)+1;
       form.querySelector('#embroiderytype').value="";
@@ -581,7 +581,7 @@
     var maintotalcost = parseFloat(mainlabeldimension)*parseFloat(mainlabelcostperunit)*parseFloat(mainlabelpieces);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','mainlabeldata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ mainlabeltype +'</td><td colspan="2">'+ mainlabeltexttype +'</td><td>'+ mainlabeldimension +'</td><td>'+mainlabelcostperunit+'</td><td>'+mainlabelpieces+'</td><td>'+maintotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ mainlabeltype +'</td><td colspan="2">'+ mainlabeltexttype +'</td><td>'+ mainlabeldimension +'</td><td>'+mainlabelcostperunit+'</td><td>'+mainlabelpieces+'</td><td class="subcost">'+maintotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#mainlabelserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#mainlabeltype').value = '';
@@ -602,7 +602,7 @@
     var scoototalcost = parseFloat(scoolabeldimension)*parseFloat(scoolabelcostperunit)*parseFloat(scoolabelpieces);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','scoolabeldata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ scoolabeltype +'</td><td colspan="2">'+ scoolabeltexttype +'</td><td>'+ scoolabeldimension +'</td><td>'+scoolabelcostperunit+'</td><td>'+scoolabelpieces+'</td><td>'+scoototalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ scoolabeltype +'</td><td colspan="2">'+ scoolabeltexttype +'</td><td>'+ scoolabeldimension +'</td><td>'+scoolabelcostperunit+'</td><td>'+scoolabelpieces+'</td><td class="subcost">'+scoototalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#scoolabelserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#scoolabeltype').value = '';
@@ -623,7 +623,7 @@
     var washtotalcost = parseFloat(washlabeldimension)*parseFloat(washlabelcostperunit)*parseFloat(washlabelpieces);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','washlabeldata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ washlabeltype +'</td><td colspan="2">'+ washlabeltexttype +'</td><td>'+ washlabeldimension +'</td><td>'+washlabelcostperunit+'</td><td>'+washlabelpieces+'</td><td>'+washtotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ washlabeltype +'</td><td colspan="2">'+ washlabeltexttype +'</td><td>'+ washlabeldimension +'</td><td>'+washlabelcostperunit+'</td><td>'+washlabelpieces+'</td><td class="subcost">'+washtotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#washlabelserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#washlabeltype').value = '';
@@ -643,7 +643,7 @@
     var costtotalcost = parseFloat(costlabeldimension)*parseFloat(costlabelcostperunit)*parseFloat(costlabelpieces);
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','costlabeldata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ costlabeltype +'</td><td colspan="2">'+ costlabeltexttype +'</td><td>'+ costlabeldimension +'</td><td>'+costlabelcostperunit+'</td><td>'+costlabelpieces+'</td><td>'+costtotalcost+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="2">'+ costlabeltype +'</td><td colspan="2">'+ costlabeltexttype +'</td><td>'+ costlabeldimension +'</td><td>'+costlabelcostperunit+'</td><td>'+costlabelpieces+'</td><td class="subcost">'+costtotalcost+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#costlabelserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#costlabeltype').value = '';
@@ -661,7 +661,7 @@
    var othercost = form.querySelector('#othercost').value;
    var newRow = document.createElement("tr");
    newRow.setAttribute('class','otherdata');
-   newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="3">'+ name +'</td><td colspan="3">'+ otherdescription +'</td><td colspan="3">'+ othercost +'</td>';
+   newRow.innerHTML = '<td>'+ serialno +'</td><td colspan="3">'+ name +'</td><td colspan="3">'+ otherdescription +'</td><td class="subcost" colspan="3">'+ othercost +'</td>';
    form.parentNode.insertBefore(newRow,form);
    form.querySelector('#otherserialno').innerText = parseInt(serialno)+1;
    form.querySelector('#othername').value='';
@@ -690,7 +690,24 @@
     var stitching = document.getElementById('stitching').value;
     var packaging_cost = document.getElementById('packaging_cost').value;
     var finishing_cost = document.getElementById('finishing_cost').value;
-    var total = document.getElementById('total').value;
+    var subtotal = document.querySelectorAll('.subcost');
+    var k;
+    var total;
+    for(k=0;k< subtotal.length; k++){
+      total = total+parseFloat(subtotal[k].innerText);
+    }
+    if(ttlcost){
+      total = total + parseFloat(ttlcost);
+    }
+    if(stitching){
+      total = total+parseFloat(stitching);
+    }
+    if(packaging_cost){
+      total = total + parseFloat(packaging_cost);
+    }
+    if(finishing_cost){
+      total = total+parseFloat(finishing_cost);
+    }
     var markup = document.getElementById('markup').value;
     var factory_fob = document.getElementById('factory_fob').value;
     var client_fob = document.getElementById('client_fob').value;
