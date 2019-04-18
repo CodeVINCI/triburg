@@ -22,6 +22,7 @@ class PreviewSheet(TemplateView):
         key = request.GET['key']
         sheet = Costsheet.objects.get(key=key)
         args = sheet.sheet
+        args['key'] = key
         return render(request,self.template_name,args)
 
 class Profile(TemplateView):
@@ -54,4 +55,4 @@ def sendcostsheet(request):
         server.quit()
         return JsonResponse({'success':1})
     else:
-        return JsonResponse({'success':0})    
+        return JsonResponse({'success':0})
