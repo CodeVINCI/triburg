@@ -39,12 +39,12 @@
                <td>{{data.1}}</td>
                <td>{{data.2}}</td>
                <td>{{data.3}}</td>
-               <td></td>
-               <td></td>
-               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
+              <td>{{data.7}}</td>
+              <td>{{data.8}}</td>
+              <td>{{data.9}}</td>
              </tr>
             {% endfor %}
             <tr><th colspan="10"><a onclick="addknitfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
@@ -61,6 +61,20 @@
                 <th>Cost/unit</th>
                 <th>Total Cost</th>
             </tr>
+            {% for data in wovenfabricdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td>{{data.1}}</td>
+               <td>{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
+              <td>{{data.7}}</td>
+              <td>{{data.8}}</td>
+              <td>{{data.9}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addwovenfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10" style="background-color:grey;">Trims</th></tr>
             <tr><th colspan="10"><i>Button</i></th></tr>
@@ -73,8 +87,19 @@
                 <th>Cost</th>
                 <th>Cost/Unit</th>
                 <th>Total Cost</th>
-
             </tr>
+            {% for data in buttondata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td>{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td colspan="2">{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
+              <td>{{data.7}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick='addbutton(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Zipper</i></th></tr>
             <tr id="zipper_headings">
@@ -85,6 +110,16 @@
                 <th>Cost/Unit</th>
                 <th>Total Cost</th>
             </tr>
+            {% for data in zipperdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td>{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addzipper(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Hook and Eye</i></th></tr>
             <tr id="hook_and_eye_headings">
@@ -95,6 +130,16 @@
                 <th>Consumption</th>
                 <th>Total Cost</th>
             </tr>
+            {% for data in hookdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addhook(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Snap Button</i></th></tr>
             <tr id="snap_button_headings">
@@ -105,6 +150,16 @@
                 <th>Consumption</th>
                 <th>Total Cost</th>
             </tr>
+            {% for data in snapdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addsnap(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Fusing</i></th></tr>
             <tr id="fusing_headings">
@@ -115,6 +170,16 @@
                 <th>Consumption</th>
                 <th>Total</th>
             </tr>
+            {% for data in fusingdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addfusing(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Other trims</i></th></tr>
             <tr id="other_trims">
@@ -124,7 +189,15 @@
                 <th>Cost/Unit</th>
                 <th>Total Cost</th>
             </tr>
-
+            {% for data in othertrimdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addothertrim(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
             <tr><th colspan="10" style="background-color:grey;">Embroidery</th></tr>
@@ -135,7 +208,15 @@
                 <th colspan="2">Cost/(1000 stich)</th>
                 <th>Total Cost</th>
             </tr>
-
+            {% for data in embroiderydata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td colspan="2">{{data.3}}</td>
+               <td>{{data.4}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addembroidery(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10" style="background-color:grey;">Art Work</th></tr>
             <tr id="art_works">
@@ -143,6 +224,13 @@
                 <th colspan="2">Artwork Size</th>
                 <th colspan="2">Total Cost</th>
             </tr>
+            {% for data in artworkdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+             </tr>
+            {% endfor %}
 
             <tr><th colspan="10"><a onclick="addartwork(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10" style="background-color:grey;">Labels</th></tr>
@@ -156,7 +244,17 @@
                 <th>No. of piece</th>
                 <th>Total Cost</th>
             </tr>
-
+            {% for data in mainlabeldata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addmainlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>SCOO label</i></th></tr>
             <tr id="scoo_label">
@@ -168,6 +266,18 @@
                 <th>No. of piece</th>
                 <th>Total Cost</th>
             </tr>
+            {% for data in scoolabeldata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
+
+             </tr>
+            {% endfor %}
 
             <tr><th colspan="10"><a onclick="addscoolabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Wash Care label</i></th></tr>
@@ -180,7 +290,17 @@
                 <th>No. of piece</th>
                 <th>Total Cost</th>
             </tr>
-
+            {% for data in washlabeldata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addwashlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10"><i>Cost label</i></th></tr>
             <tr id="cost_label">
@@ -192,7 +312,18 @@
                 <th>No. of piece</th>
                 <th>Total Cost</th>
             </tr>
+            {% for data in costlabeldata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="2">{{data.1}}</td>
+               <td colspan="2">{{data.2}}</td>
+               <td>{{data.3}}</td>
+               <td>{{data.4}}</td>
+               <td>{{data.5}}</td>
+               <td>{{data.6}}</td>
 
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addcostlabel(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="10" style="background-color:grey;">Other</th></tr>
             <tr id="other">
@@ -201,7 +332,15 @@
                 <th colspan="3">Description</th>
                 <th colspan="3">Cost</th>
             </tr>
+            {% for data in otherdata %}
+             <tr>
+               <td>{{data.0}}</td>
+               <td colspan="3">{{data.1}}</td>
+               <td colspan="3">{{data.2}}</td>
+               <td colspan="3">{{data.3}}</td>
 
+             </tr>
+            {% endfor %}
             <tr><th colspan="10"><a onclick="addother(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
             <tr><th colspan="7">TTL cost(if Any)</th><th id='ttlcost' colspan="3"></th></tr>
             <tr><th colspan="7">Stitching</th><th id="stitching" colspan="3"></th></tr>
