@@ -5,6 +5,7 @@ from .models import Buyer,Costsheet
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
+from django.utils.crypto import get_random_string
 # Create your views here.
 
 
@@ -31,8 +32,9 @@ class Profile(TemplateView):
 def savecostsheet(request):
     if request.method == 'POST' and request.user.is_authenticated:
         data = json.loads(request.body)
-        c = Costsheet(creator=request.user,sheet=data)
+        unique_id = get_random_string(length=32)
+        c = Costsheet(creator=request.user,sheet=data,key=unique_id)
         c.save()
         return JsonResponse({"success":1})
     else:
-        return JsonResponse({"success":0})    
+        return JsonResponse({"success":0})
