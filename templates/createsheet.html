@@ -673,12 +673,12 @@
   function savesheet(event){
     var knitfabricdata = document.querySelectorAll('.knitfabricdata');
     var wovenfabricdata = document.querySelectorAll('.wovenfabricdata');
-    var buttondata = document.querySelector('.buttondata');
+    var buttondata = document.querySelectorAll('.buttondata');
     var zipperdata = document.querySelectorAll('.zipperdata');
     var hookdata = document.querySelectorAll('.hookdata');
     var snapdata = document.querySelectorAll('.snapdata');
     var fusingdata = document.querySelectorAll('.fusingdata');
-    var othertrimsdata = document.querySelectorAll('.othertrimsdata');
+    var othertrimdata = document.querySelectorAll('.othertrimsdata');
     var embroiderydata = document.querySelectorAll('.embroiderydata');
     var artworkdata = document.querySelectorAll('.artworkdata');
     var mainlabeldata = document.querySelectorAll('.mainlabeldata');
@@ -694,11 +694,22 @@
     var markup = document.getElementById('markup').value;
     var factory_fob = document.getElementById('factory_fob').value;
     var client_fob = document.getElementById('client_fob').value;
-    window.localStorage.setItem('buyer',document.getElementById('buyers').value);
-    window.localStorage.setItem('styleno',document.getElementById('styleno').value);
-    window.localStorage.setItem('dateofdelivery',document.getElementById('dateofdelivery').value);
-    var knitfabric = [];
+    var costsheet = {}
+
+    costsheet['ttlcost'] = ttlcost;
+    costsheet['stitching'] = stitching;
+    costsheet['packaging_cost'] = packaging_cost;
+    costsheet['finishing_cost'] = finishing_cost;
+    costsheet['total'] = total;
+    costsheet['markup'] = markup;
+    costsheet['factory_fob'] = factory_fob;
+    costsheet['client_fob'] = client_fob;
+    costsheet['buyer'] = document.getElementById('buyers').value;
+    costsheet['styleno'] = document.getElementById('styleno').value;
+    costsheet['dateofdelivery'] = document.getElementById('dateofdelivery').value;
     var i;
+    if(knitfabricdata){
+    var knitfabric = [];
     for (i = 0; i < knitfabricdata.length; i++) {
      var elements = knitfabricdata[i].querySelectorAll('td');
      var data = [];
@@ -708,8 +719,10 @@
      }
      knitfabric.push(data);
      }
-     window.localStorage.setItem('knitfabricdata',knitfabric);
-     var wovenfabric=[]
+     costsheet['knitfabricdata'] = knitfabric;
+   }
+   if(wovenfabricdata){
+     var wovenfabric=[];
      for (i = 0; i < wovenfabricdata.length; i++) {
       var elements = wovenfabricdata[i].querySelectorAll('td');
       var data = [];
@@ -719,8 +732,10 @@
       }
       wovenfabric.push(data);
       }
-      window.localStorage.setItem('wovenfabricdata',wovenfabric);
-      var buttons = []
+      costsheet['wovenfabricdata'] = wovenfabric;
+    }
+    if(buttondata){
+      var buttons = [];
       for (i = 0; i < buttondata.length; i++) {
        var elements = buttondata[i].querySelectorAll('td');
        var data = [];
@@ -730,8 +745,10 @@
        }
        buttons.push(data);
        }
-       window.localStorage.setItem('buttondata',buttons);
-       var zippers = []
+       costsheet['buttondata'] = buttons;
+     }
+     if(zipperdata){
+       var zippers = [];
        for (i = 0; i < zipperdata.length; i++) {
         var elements = zipperdata[i].querySelectorAll('td');
         var data = [];
@@ -741,8 +758,166 @@
         }
         zippers.push(data);
         }
-        window.localStorage.setItem('zipperdata',zippers);
-        window.location.href = '/accounts/previewcostsheet';
+        costsheet['zipperdata'] = zippers;
+      }
+      if(hookdata){
+        var hooks = [];
+        for (i = 0; i < hookdata.length; i++) {
+         var elements = hookdata[i].querySelectorAll('td');
+         var data = [];
+         var j;
+         for(j=0; j< elements.length;j++){
+           data.push(elements[j].innerText);
+         }
+         hooks.push(data);
+         }
+        costsheet['hookdata'] = hooks;
+      }
+      if(snapdata){
+        var snaps = [];
+        for (i = 0; i < snapdata.length; i++) {
+         var elements = snapdata[i].querySelectorAll('td');
+         var data = [];
+         var j;
+         for(j=0; j< elements.length;j++){
+           data.push(elements[j].innerText);
+         }
+         snaps.push(data);
+         }
+         costsheet['snapdata'] = snaps;
+       }
+       if(fusingdata){
+         var fusings = [];
+         for (i = 0; i < fusingdata.length; i++) {
+          var elements = fusingdata[i].querySelectorAll('td');
+          var data = [];
+          var j;
+          for(j=0; j< elements.length;j++){
+            data.push(elements[j].innerText);
+          }
+          fusings.push(data);
+          }
+          costsheet['fusingdata'] = fusings;
+        }
+        if(othertrimdata){
+          var othertrims = [];
+          for (i = 0; i < othertrimdata.length; i++) {
+           var elements = othertrimdata[i].querySelectorAll('td');
+           var data = [];
+           var j;
+           for(j=0; j< elements.length;j++){
+             data.push(elements[j].innerText);
+           }
+           othertrims.push(data);
+           }
+           costsheet['othertrimdata'] = othertrims;
+         }
+
+         if(embroiderydata){
+           var embroideries = [];
+           for (i = 0; i < embroiderydata.length; i++) {
+            var elements = embroiderydata[i].querySelectorAll('td');
+            var data = [];
+            var j;
+            for(j=0; j< elements.length;j++){
+              data.push(elements[j].innerText);
+            }
+            embroideries.push(data);
+            }
+            costsheet['embroiderydata'] = embroideries;
+          }
+
+          if(artworkdata){
+            var artworks = [];
+            for (i = 0; i < artworkdata.length; i++) {
+             var elements = artworkdata[i].querySelectorAll('td');
+             var data = [];
+             var j;
+             for(j=0; j< elements.length;j++){
+               data.push(elements[j].innerText);
+             }
+             artworks.push(data);
+             }
+             costsheet['artworkdata'] = artworks;
+           }
+           if(mainlabeldata){
+             var mainlabels = [];
+             for (i = 0; i < mainlabeldata.length; i++) {
+              var elements = mainlabeldata[i].querySelectorAll('td');
+              var data = [];
+              var j;
+              for(j=0; j< elements.length;j++){
+                data.push(elements[j].innerText);
+              }
+              mainlabels.push(data);
+              }
+              costsheet['mainlabeldata'] = mainlabels;
+            }
+           if(scoolabeldata){
+              var scoolabels = [];
+              for (i = 0; i < scoolabeldata.length; i++) {
+               var elements = scoolabeldata[i].querySelectorAll('td');
+               var data = [];
+               var j;
+               for(j=0; j< elements.length;j++){
+                 data.push(elements[j].innerText);
+               }
+               scoolabels.push(data);
+               }
+               costsheet['scoolabeldata'] = scoolabels;
+             }
+           if(washlabeldata){
+               var washlabels = [];
+               for (i = 0; i < washlabeldata.length; i++) {
+                var elements = washlabeldata[i].querySelectorAll('td');
+                var data = [];
+                var j;
+                for(j=0; j< elements.length;j++){
+                  data.push(elements[j].innerText);
+                }
+                washlabels.push(data);
+                }
+                costsheet['washlabeldata'] = washlabels;
+              }
+             if(costlabeldata){
+                var costlabels = [];
+                for (i = 0; i < costlabeldata.length; i++) {
+                 var elements = costlabeldata[i].querySelectorAll('td');
+                 var data = [];
+                 var j;
+                 for(j=0; j< elements.length;j++){
+                   data.push(elements[j].innerText);
+                 }
+                 costlabels.push(data);
+                 }
+                 costsheet['costlabeldata'] = costlabels;
+               }
+
+              if(otherdata){
+                var others = [];
+                for (i = 0; i < otherdata.length; i++) {
+                 var elements = otherdata[i].querySelectorAll('td');
+                 var data = [];
+                 var j;
+                 for(j=0; j< elements.length;j++){
+                   data.push(elements[j].innerText);
+                 }
+                 others.push(data);
+                 }
+                 costsheet['otherdata'] = others;
+               }
+
+               var xhr = new XMLHttpRequest();
+               var url = "/accounts/savecostsheet/";
+               xhr.open("POST", url, true);
+               xhr.setRequestHeader("Content-Type", "application/json");
+               xhr.onreadystatechange = function () {
+                   if (xhr.readyState === 4 && xhr.status === 200) {
+                       alert('sent');
+                   }
+               };
+               var data = JSON.stringify(costsheet);
+               xhr.send(data);
   }
 
 </script>
