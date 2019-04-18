@@ -27,7 +27,8 @@ class PreviewSheet(TemplateView):
 class Profile(TemplateView):
     template_name = 'profile.html'
     def get(self, request, *wargs, **kwargs):
-        args = {}
+        sheets = Costsheet.objects.filter(creator=request.user)
+        args = {'costsheets':sheets}
         return render(request,self.template_name,args)
 
 @csrf_exempt
