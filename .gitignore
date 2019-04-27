@@ -1,4 +1,3 @@
-static/
 triburg/settings.py
 *.pyc
 account/migrations/
