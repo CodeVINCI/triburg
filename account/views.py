@@ -5,6 +5,7 @@ from .models import Buyer,Costsheet
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
+import smtplib
 from django.utils.crypto import get_random_string
 # Create your views here.
 
@@ -50,7 +51,13 @@ def sendcostsheet(request):
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         server.login("serveremail96@gmail.com", "kinley@123")
-        msg = request.user.email +' has shared a costsheet http://139.59.58.219/accounts/previewcostsheet/?key='+key
+        msg = "\r\n".join([
+        "From: serveremail96@gmail.com",
+        "To: "+email,
+        "Subject: Costsheet Shared",
+        "",
+        "http://139.59.58.219/accounts/previewcostsheet/?key="+key
+        ])
         server.sendmail("serveremail96@gmail.com",email, msg)
         server.quit()
         return JsonResponse({'success':1})

@@ -18,6 +18,8 @@ from django.urls import path, include
 from . import views
 from .views import SignupPage,SignupRequestpage
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +31,4 @@ urlpatterns = [
     path('approverequest/', views.approverequest),
     path('disapproverequest/', views.disapproverequest),
     path('accounts/', include('account.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
