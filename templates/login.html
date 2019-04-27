@@ -6,10 +6,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+  body
+ {
+    background-image:url('{{ STATIC_URL }}media/signupbackground.jpg');
+    background-repeat:no-repeat;
+    background-size:100%;
+ }
+</style>
     <title>Login</title>
 </head>
 {% load static %}
-<body style="min-height: 100%;" background="{% static "media/signupbackground.jpg" %}">
+<body>
 <div class="container" style="min-height: 100%">
 <h1>Login Page</h1>
 <form method="post">
