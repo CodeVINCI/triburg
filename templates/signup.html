@@ -7,9 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Title</title>
 </head>
-<body>
-<div class="container" style="min-height: 100%">
-<h1>Signup page</h1>
+<body style="min-height: 100%;" background="../static/media/background.jpg">
+<div class="row" style="min-height: 100%;margin-bottom:0;">
+  <div class="col s6" style="padding:0 !important;background-image:url('../static/media/coolpic.jpg');height:700px;">
+  <div class="container" style="padding-top:100px;">
+  <h4>Create, Manage and Save your Cost-Sheets.</h4>
+  <br>
+  <br>
+  <p>This portal delivers a comprehensive environment for professional Merchandisers to create sophisticated cost-sheets, ready to save, share, print and review through the web, wireless devices and other media.</p>
+  </div>
+  </div>
+<div class="col s6" style="padding:40px;">
+<h1>Signup</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -19,6 +28,7 @@
     </button>
     </div>
   </form>
+</div>
 </div>
 <footer class="page-footer">
           <div class="container">
