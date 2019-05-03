@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from .forms import UserRegistrationForm
 from django.contrib.auth import login, authenticate, logout
 from account.models import UserRequest, User
+from django.db.models import Q
 
 def redirectview(request):
     if request.user.is_authenticated:
