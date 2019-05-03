@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Profile</title>
 </head>
-<body style="min-height: 100%;" background="../static/media/background.jpg">
+<body style="min-height: 100%;" background="../../static/media/background.jpg">
 <div class="container" style="min-height: 100%">
 <h3 style="color:white;">Welcome</h3>
 {% if user.is_admin %}
@@ -16,6 +16,10 @@
 {% else %}
 <h5 style="color:white;">{{user.first_name}}&nbsp;{{user.last_name}}</h5>
 <h5 style="color:white;">{{user.email}}</h5>
+<br>
+<br>
+<br>
+<br>
 <a href='/accounts/createcostsheet' class="btn">Create costsheet</a>
 <br>
 <br>
