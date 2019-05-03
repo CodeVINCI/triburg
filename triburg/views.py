@@ -7,9 +7,9 @@ from account.models import UserRequest, User
 
 def redirectview(request):
     if request.user.is_authenticated:
-        return redirect('/home')
+        return redirect('/accounts/profile')
     else:
-        return redirect('/signup')
+        return redirect('/login')
 
 
 
