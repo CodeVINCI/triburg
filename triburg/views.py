@@ -64,6 +64,8 @@ class ApprovalRequestpage(TemplateView):
         if request.user.user_type=='inspector':
             args = {"approval_requests": ""}
             return render(request, self.template_name,args)
+        else:
+            return HttpResponse('<h1>Please Log in as Quality Inspector</h1>') 
 
 def approverequest(request):
     if request.user.is_admin:
