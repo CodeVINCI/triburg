@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect,render
 from django.views.generic import TemplateView
 from .forms import UserRegistrationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from account.models import UserRequest, User
 
 def redirectview(request):
@@ -73,3 +73,8 @@ def disapproverequest(request):
         return redirect('/signuprequests')
     else:
         return HttpResponse('<h1>Not Admin</h1>')
+
+def logoutuser(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return redirect('/login')
