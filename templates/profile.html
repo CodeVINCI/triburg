@@ -19,6 +19,15 @@
 <a href='/signuprequests' class="btn">Signup requests</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href='/logoutuser' class="btn">Logout</a>
+<br>
+<br>
+<br>
+<div style="content-align:center;text-align:center;" class="row">
+  <div class="search-wrapper">
+        <input id="search" placeholder="Search"><i class="material-icons">search</i>
+        <div class="search-results"></div>
+  </div>
+</div>
 {% else %}
 <h5 style="color:white;">{{user.first_name}}&nbsp;{{user.last_name}}</h5>
 <h5 style="color:white;">{{user.email}}</h5>
