@@ -58,6 +58,12 @@ class SignupRequestpage(TemplateView):
         else:
             return HttpResponse('<h1>Please Log in as the admin</h1>')
 
+class ApprovalRequestpage(TemplateView):
+    template_name = 'approvalpage.html'
+    def get(self,request, *wargs, **kwargs):
+        if request.user.user_type=='inspector':
+            args = {"approval_requests": ""}
+            return render(request, self.template_name,args)
 
 def approverequest(request):
     if request.user.is_admin:
