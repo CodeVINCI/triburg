@@ -20,7 +20,10 @@ class SearchUsers(TemplateView):
     template = 'searchusers.html'
     def get(self, request, *wargs, **kwargs):
         if request.user.is_admin:
-            args = {'results':""}
+            query = request.GET['query']
+            filter = request.GET['filter']
+            users = User.objects.filter(Q(username__contains=query) | Q(first_name__contains=query) | Q(last_name__contains=query) | Q(email__contains=query) |)
+            args = {'results':users}
             return render(request,self.template,args)
         else:
             return redirect('/login')
