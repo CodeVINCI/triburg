@@ -16,6 +16,14 @@ def redirectview(request):
 def homepage(request):
     return HttpResponse("<h1>This is home page</h1>")
 
+class SearchUsers(TemplateView):
+    template = 'searchuser.html'
+    def get(self, request, *wargs, **kwargs):
+        if request.user.is_admin:
+            args = {'results':}
+            return render(request,self.template,args)
+        else:
+            return redirect('/login')
 
 class SignupPage(TemplateView):
     template = 'signup.html'
