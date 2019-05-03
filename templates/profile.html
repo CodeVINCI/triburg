@@ -46,7 +46,19 @@
 <a href='/approvalrequests' class="btn">Cost Sheet Approval requests</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href='/logoutuser' class="btn">Logout</a>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="content-align:center;text-align:center;padding:80px;" class="row search">
+ <h5 style="color:white;">Search</h5>
+  <div class="search-wrapper">
+        <input style="background:white;" id="searchcostsheet" placeholder="Search Cost Sheets">
+        <div class="search-results"></div>
+  </div>
+  <a onclick="searchcostsheets(event)" class="btn">Search</a>
+</div>
 {% else %}
 <h5 style="color:white;">{{user.first_name}}&nbsp;{{user.last_name}}</h5>
 <h5 style="color:white;">{{user.email}}</h5>
@@ -73,6 +85,9 @@
 function searchusers(event){
   var query = document.getElementById('search').value;
   window.location.href = '/searchusers?query='+query+'&filter=none';
+}
+function searchcostsheets(event){
+  alert('searching all cost sheets');
 }
 </script>
 </body>
