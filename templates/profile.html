@@ -37,6 +37,16 @@
   </div>
   <a onclick="searchusers(event)" class="btn">Search</a>
 </div>
+{% elif user.user_type == 'inspector' %}
+<h5 style="color:white;">Quality Inspector</h5>
+<br>
+<br>
+<br>
+<br>
+<a href='/approvalrequests' class="btn">Cost Sheet Approval requests</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='/logoutuser' class="btn">Logout</a>
+
 {% else %}
 <h5 style="color:white;">{{user.first_name}}&nbsp;{{user.last_name}}</h5>
 <h5 style="color:white;">{{user.email}}</h5>
