@@ -17,10 +17,10 @@ def homepage(request):
     return HttpResponse("<h1>This is home page</h1>")
 
 class SearchUsers(TemplateView):
-    template = 'searchuser.html'
+    template = 'searchusers.html'
     def get(self, request, *wargs, **kwargs):
         if request.user.is_admin:
-            args = {'results':}
+            args = {'results':""}
             return render(request,self.template,args)
         else:
             return redirect('/login')
