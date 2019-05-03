@@ -12,7 +12,13 @@
 <h3 style="color:white;">Welcome</h3>
 {% if user.is_admin %}
 <h5 style="color:white;">Admin</h5>
+<br>
+<br>
+<br>
+<br>
 <a href='/signuprequests' class="btn">Signup requests</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='/logoutuser' class="btn">Logout</a>
 {% else %}
 <h5 style="color:white;">{{user.first_name}}&nbsp;{{user.last_name}}</h5>
 <h5 style="color:white;">{{user.email}}</h5>
