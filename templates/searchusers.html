@@ -20,9 +20,9 @@
     <div class="container" style="background:white;content-align:center;text-align:center;">
        <h4>Search Results</h4>
        <table>
-           <tr><th>S No.</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th><th>User Type</th><th>Req. Date</th><th>Accept</th><th>Reject</th></tr>
+           <tr><th>S No.</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th><th>User Type</th><th>Req. Date</th><th>Accepted on</th></tr>
    {% for user in results %}
-          <tr> {{user}}</tr>
+           <tr><td>{{forloop.counter}}</td><td>{{user.username}}</td><td>{{user.first_name}}</td><td>{{user.last_name}}</td><td>{{user.email}}</td><td>{{user.user_type}}</td><td>{{user.date_joined}}</td><td>{{user.last_login}}</td></tr>
    {% endfor %}
    </table>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
