@@ -17,9 +17,9 @@
       </ul>
     </div>
   </nav>
-<div class="container">
+<div class="container" style="background:white;content-align:center;text-align:center;">
    <h4>Signup Requests</h4>
-    <table class="collection with-header">
+    <table>
         <th><td>S No.</td><td>Username</td><td>First Name</td><td>Last Name</td><td>Email</td><td>User Type</td><td>Req. Date</td><td>Accept</td><td>Reject</td></th>
 {% for request in pending_requests %}
         <tr class="collection-item" style="padding-bottom: 10px;"><div>{{ request.user.first_name }}&nbsp;{{request.user.last_name}}&nbsp;for&nbsp;role&nbsp;of&nbsp;{{request.user.user_type}}<div class="secondary-content"><a class="btn waves-effect waves-light" href='/approverequest/?id={{request.id}}'>Accept</a>&nbsp;&nbsp;<a class="btn waves-effect red waves-light" href='/disapproverequest/?id={{request.id}}'>Reject</a></div></div></tr>
