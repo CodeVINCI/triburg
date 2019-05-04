@@ -47,7 +47,7 @@
         <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
             <table id=costsheettable>
                 <tr><th colspan="10" style="background-color:grey;">Fabric Details</th></tr>
-                <tr><th colspan="10"><i>Knit</i></th></tr>
+                <tr><th colspan="10"><i>Knit Fabric</i></th></tr>
                 <tr id="knit_fabric">
                     <th>S no.</th>
                     <th>Fabric name</th>
@@ -73,7 +73,7 @@
                     <td>(consumption)*(cost/m)</td>
                 </tr>
                 <tr><th colspan="10"><a onclick="addknitfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
-                <tr><th colspan="10"><i>Woven</i></th></tr>
+                <tr><th colspan="10"><i>Woven Fabric</i></th></tr>
                 <tr id="woven_fabric">
                     <th>S no.</th>
                     <th>Fabric name</th>
@@ -100,7 +100,7 @@
                 </tr>
                 <tr><th colspan="10"><a onclick="addwovenfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
-                <tr><th colspan="10"><i>Dyeing</i></th></tr>
+                <tr><th colspan="10"><i>Fabric Dyeing</i></th></tr>
                 <tr id="dyeing_fabric">
                     <th>S no.</th>
                     <th>Fabric name</th>
@@ -153,6 +153,33 @@
                     <td>(consumption)*(cost/m)</td>
                 </tr>
                 <tr><th colspan="10"><a onclick="addprintingfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
+                <tr><th colspan="10"><i>Other Fabric-Related Cost</i></th></tr>
+                <tr id="related_fabric">
+                    <th>S no.</th>
+                    <th>Fabric name</th>
+                    <th>GSM</th>
+                    <th>Content</th>
+                    <th>Count</th>
+                    <th>Construction</th>
+                    <th>Total width</th>
+                    <th>Consumption</th>
+                    <th>Cost/unit</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tr id=related_fabric_form>
+                    <td id=relatedfabricserialno>1</td>
+                    <td><div class="input-field col s12"><input id="relatedfabricname" type="text" class="validate"><label for="relatedfabricname">fabric</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabricgsm" type="text" class="validate"><label for="relatedfabricgsm">gsm</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabriccontent" type="text" class="validate"><label for="relatedfabriccontent">##/##..-Abc/Abc..</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabriccount" type="text" class="validate"><label for="relatedfabriccount">#x#/#x#..</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabricconstruction" type="text" class="validate"><label for="relatedfabricconstruction">EPIxPPI</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabrictotalwidth" type="text" class="validate"><label for="relatedfabrictotalwidth">inches</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabricconsumption" type="text" class="validate"><label for="relatedfabricconsumption">metres</label></div></td>
+                    <td><div class="input-field col s12"><input id="relatedfabricperunitcost" type="text" class="validate"><label for="relatedfabricperunitcost">Cost/m</label></div></td>
+                    <td>(consumption)*(cost/m)</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addrelatedfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
                 <tr><th colspan="10" style="background-color:grey;">Trims</th></tr>
                 <tr><th colspan="10"><i>Button</i></th></tr>
