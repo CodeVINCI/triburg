@@ -20,9 +20,9 @@
 <div class="container" style="background:white;content-align:center;text-align:center;">
    <h4>Approval Rquests</h4>
     <table>
-        <tr><th>S No.</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th><th>User Type</th><th>Req. Date</th><th>Accept</th><th>Reject</th></tr>
+        <tr><th>S No.</th><th>Cost-Sheet Name</th><th>Sender</th><th>Received Date</th></tr>
 {% for request in approval_requests %}
-        <tr><td>{{forloop.counter}}</td><td>{{request.user.username}}</td><td>{{request.user.first_name}}</td><td>{{request.user.last_name}}</td><td>{{request.user.email}}</td><td>{{request.user.user_type}}</td><td>{{request.user.date_joined}}</td><td><a class="btn waves-effect waves-light" href='/approverequest/?id={{request.id}}'>Accept</a></td><td><a class="btn waves-effect red waves-light" href='/disapproverequest/?id={{request.id}}'>Reject</a></td></tr>
+        <tr><td>{{forloop.counter}}</td><td>{{request.costsheet.name}}</td><td>{{request.sender}}</td><td>{{request.received_date}}</td></tr>
 {% endfor %}
 </table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
