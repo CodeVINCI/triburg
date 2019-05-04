@@ -100,6 +100,7 @@
                 </tr>
                 <tr><th colspan="10"><a onclick="addwovenfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
+                <tr><th colspan="10"><i>Dyeing</i></th></tr>
                 <tr id="dyeing_fabric">
                     <th>S no.</th>
                     <th>Fabric name</th>
@@ -125,6 +126,33 @@
                     <td>(consumption)*(cost/m)</td>
                 </tr>
                 <tr><th colspan="10"><a onclick="adddyeingfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
+                <tr><th colspan="10"><i>Fabric Printing</i></th></tr>
+                <tr id="printing_fabric">
+                    <th>S no.</th>
+                    <th>Fabric name</th>
+                    <th>GSM</th>
+                    <th>Content</th>
+                    <th>Count</th>
+                    <th>Construction</th>
+                    <th>Total width</th>
+                    <th>Consumption</th>
+                    <th>Cost/unit</th>
+                    <th>Total Cost</th>
+                </tr>
+                <tr id=printing_fabric_form>
+                    <td id=printingabricserialno>1</td>
+                    <td><div class="input-field col s12"><input id="printingfabricname" type="text" class="validate"><label for="printingfabricname">fabric</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabricgsm" type="text" class="validate"><label for="printingfabricgsm">gsm</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabriccontent" type="text" class="validate"><label for="printingfabriccontent">##/##..-Abc/Abc..</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabriccount" type="text" class="validate"><label for="printingfabriccount">#x#/#x#..</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabricconstruction" type="text" class="validate"><label for="printingfabricconstruction">EPIxPPI</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabrictotalwidth" type="text" class="validate"><label for="printingfabrictotalwidth">inches</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabricconsumption" type="text" class="validate"><label for="printingfabricconsumption">metres</label></div></td>
+                    <td><div class="input-field col s12"><input id="printingfabricperunitcost" type="text" class="validate"><label for="printingfabricperunitcost">Cost/m</label></div></td>
+                    <td>(consumption)*(cost/m)</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addprintingfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
                 <tr><th colspan="10" style="background-color:grey;">Trims</th></tr>
                 <tr><th colspan="10"><i>Button</i></th></tr>
