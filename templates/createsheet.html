@@ -23,7 +23,7 @@
     <div class="row" style="text-align: center;align-content: center;">
         <div class="row" style="text-align: center;align-content: center;">
             <div class="row">
-        <div class="input-field col s6" style="padding-left: 10%;">
+        <div class="input-field col s4" style="padding-left: 10%;">
             <select id='buyers'>
                 <option value="" disabled selected>Buyers</option>
                 {% for buyer in buyers %}
@@ -31,7 +31,11 @@
                 {% endfor %}
             </select>
             </div>
-        <div class="input-field col s6" style="padding-right: 10%;">
+        <div class="input-field col s4">
+          <input id="category" type="text" class="validate">
+          <label for="category">Category</label>
+        </div>
+        <div class="input-field col s4" style="padding-right: 10%;">
                 <input id="styleno" type="text" class="validate">
                 <label for="styleno">Style No.</label>
         </div>
