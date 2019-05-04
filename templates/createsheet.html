@@ -44,21 +44,25 @@
             <input id="dateofdelivery" placeholder="Date of Delivery" type="text" class="datepicker">
         </div>
         </div>
-        <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
+        <div style="overflow-y: scroll; height:600px;width: 100%;text-align: center;align-content: center;margin: auto;">
             <table id=costsheettable>
                 <tr><th colspan="10" style="background-color:grey;">Fabric Details</th></tr>
                 <tr><th colspan="10"><i>Knit Fabric</i></th></tr>
                 <tr id="knit_fabric">
                     <th>S no.</th>
                     <th>Fabric name</th>
-                    <th>GSM</th>
                     <th>Content</th>
-                    <th>Count</th>
+                    <th>GSM</th>
+                    <th>Yarn Count</th>
                     <th>Construction</th>
+                    <th>Type</th>
                     <th>Total width</th>
                     <th>Consumption</th>
-                    <th>Cost/unit</th>
+                    <th>Rate</th>
+                    <th>Extra Allowances %</th>
                     <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
                 </tr>
                 <tr id=knit_fabric_form>
                     <td id=fabricserialno>1</td>
@@ -75,16 +79,20 @@
                 <tr><th colspan="10"><a onclick="addknitfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="10"><i>Woven Fabric</i></th></tr>
                 <tr id="woven_fabric">
-                    <th>S no.</th>
-                    <th>Fabric name</th>
-                    <th>GSM</th>
-                    <th>Content</th>
-                    <th>Count</th>
-                    <th>Construction</th>
-                    <th>Total width</th>
-                    <th>Consumption</th>
-                    <th>Cost/unit</th>
-                    <th>Total Cost</th>
+                  <th>S no.</th>
+                  <th>Fabric name</th>
+                  <th>Content</th>
+                  <th>GSM</th>
+                  <th>Yarn Count</th>
+                  <th>Construction</th>
+                  <th>Type</th>
+                  <th>Total width</th>
+                  <th>Consumption</th>
+                  <th>Rate</th>
+                  <th>Extra Allowances %</th>
+                  <th>Total Cost</th>
+                  <th>Supplier</th>
+                  <th>Remarks</th>
                 </tr>
                 <tr id='woven_fabric_form'>
                     <td id='wovenfabricserialno'>1</td>
@@ -103,15 +111,15 @@
                 <tr><th colspan="10"><i>Fabric Dyeing</i></th></tr>
                 <tr id="dyeing_fabric">
                     <th>S no.</th>
-                    <th>Fabric name</th>
-                    <th>GSM</th>
-                    <th>Content</th>
-                    <th>Count</th>
-                    <th>Construction</th>
-                    <th>Total width</th>
+                    <th>Dyeing Method</th>
+                    <th>Dye Type</th>
+                    <th>Colour</th>
                     <th>Consumption</th>
-                    <th>Cost/unit</th>
+                    <th>Rate</th>
+                    <th>Extra Allowance%</th>
                     <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remark</th>
                 </tr>
                 <tr id=dyeing_fabric_form>
                     <td id=dyeingfabricserialno>1</td>
@@ -130,15 +138,16 @@
                 <tr><th colspan="10"><i>Fabric Printing</i></th></tr>
                 <tr id="printing_fabric">
                     <th>S no.</th>
-                    <th>Fabric name</th>
-                    <th>GSM</th>
-                    <th>Content</th>
-                    <th>Count</th>
-                    <th>Construction</th>
-                    <th>Total width</th>
+                    <th>Printing Type</th>
+                    <th>Printing Method</th>
+                    <th>Pigment Type</th>
+                    <th>No. of Colours</th>
                     <th>Consumption</th>
-                    <th>Cost/unit</th>
+                    <th>Rate</th>
+                    <th>Extra Allowance%</th>
                     <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
                 </tr>
                 <tr id=printing_fabric_form>
                     <td id=printingabricserialno>1</td>
@@ -154,18 +163,41 @@
                 </tr>
                 <tr><th colspan="10"><a onclick="addprintingfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
+                <tr><th colspan="10"><i>Fabric Finishing</i></th></tr>
+                <tr id="finishing_fabric">
+                    <th>S no.</th>
+                    <th>Printing Type</th>
+                    <th>Printing Method</th>
+                    <th>Pigment Type</th>
+                    <th>No. of Colours</th>
+                    <th>Consumption</th>
+                    <th>Rate</th>
+                    <th>Extra Allowance%</th>
+                    <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr id=finishing_fabric_form>
+                    <td id=finishingabricserialno>1</td>
+                    <td><div class="input-field col s12"><input id="finishingfabricname" type="text" class="validate"><label for="finishingfabricname">fabric</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabricgsm" type="text" class="validate"><label for="finishingfabricgsm">gsm</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabriccontent" type="text" class="validate"><label for="finishingfabriccontent">##/##..-Abc/Abc..</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabriccount" type="text" class="validate"><label for="finishingfabriccount">#x#/#x#..</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabricconstruction" type="text" class="validate"><label for="finishingfabricconstruction">EPIxPPI</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabrictotalwidth" type="text" class="validate"><label for="finishingfabrictotalwidth">inches</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabricconsumption" type="text" class="validate"><label for="finishingfabricconsumption">metres</label></div></td>
+                    <td><div class="input-field col s12"><input id="finishingfabricperunitcost" type="text" class="validate"><label for="finishingfabricperunitcost">Cost/m</label></div></td>
+                    <td>(consumption)*(cost/m)</td>
+                </tr>
+                <tr><th colspan="10"><a onclick="addfinishingfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
                 <tr><th colspan="10"><i>Other Fabric-Related Cost</i></th></tr>
                 <tr id="related_fabric">
                     <th>S no.</th>
-                    <th>Fabric name</th>
-                    <th>GSM</th>
-                    <th>Content</th>
-                    <th>Count</th>
-                    <th>Construction</th>
-                    <th>Total width</th>
-                    <th>Consumption</th>
-                    <th>Cost/unit</th>
+                    <th>Description</th>
                     <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
                 </tr>
                 <tr id=related_fabric_form>
                     <td id=relatedfabricserialno>1</td>
