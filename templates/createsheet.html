@@ -18,12 +18,21 @@
   </nav>
 <div class="row" style="align-content: center;text-align: center;padding-left: 3%;padding-right: 3%;">
     <div class="row" style="align-content: center;text-align: center;">
-        <div class="input-field col s6" style="padding-left: 10%;">
+        <div class="input-field col s4" style="padding-left: 10%;">
           <input id="costsheetname" type="text" placeholder="Cost Sheet Name" class="validate">
         </div>
-        <div class="input-field col s6" style="padding-right: 10%;">
-          <input id="costsheetdescription" type="text" placeholder="Cost Sheet Description" class="validate">
+        <div class="input-field col s4" style="padding-right: 10%;">
+          <input id="costsheetdescription" type="text" placeholder="Description" class="validate">
         </div>
+        <div class="file-field input-field col s4">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
     </div>
     <div class="row" style="text-align: center;align-content: center;">
         <div class="row" style="text-align: center;align-content: center;">
@@ -45,8 +54,7 @@
                 <label for="styleno">Style No.</label>
         </div>
         <div class="input-field col s4" style="padding-left: 10%;">
-          <input id="seasons" type="text" class="validate">
-          <label for="seasons">LP/Season</label>
+          <input id="seasons" type="text" placeholder="LP/Season" class="validate">
         </div>
         <div class="input-field col s4">
           <input id="size" type="text" class="validate">
