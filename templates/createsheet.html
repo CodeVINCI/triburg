@@ -268,6 +268,33 @@
                 </tr>
                 <tr><th colspan="14"><a onclick='addthread(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
+                <tr><th colspan="14"><i>Elastic</i></th></tr>
+                <tr id="elastic_headings">
+                    <th>S no.</th>
+                    <th colspan="2">Elastic Type</th>
+                    <th>Width</th>
+                    <th>Colour</th>
+                    <th>Consumption</th>
+                    <th>Cost/unit</th>
+                    <th>Extra Allowance%</th>
+                    <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr id='elastic_form'>
+                  <td id='elasticserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='elastictype' class="browser-default"><option value="" disabled selected>Choose Elastic type</option><option value="braided">braided</option><option value="Knitted">Knitted</option><option value="Woven">Woven</option><option value="lace lingerie">Lace Lingerie</option><option value="Fold-Over">Fold-Over</option><option value="Buttonhole">Buttonhole</option><option value="Clear">Clear</option><option value="Draw-String">Draw-String</option><option value="Cord">Cord</option><option value="Plush Backed">Plush Backed</option><option value="Other">Other</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="elasticwidth" type="text" class="validate"><label for="elasticwidth">width</label></div></td>
+                  <td><div class="input-field col s12"><input id="elasticcolour" type="text" class="validate"><label for="elasticcolour">colour</label></div></td>
+                  <td><div class="input-field col s12"><input id="elasticconsumption" type="text" class="validate"><label for="elasticconsumption">consumption</label></div></td>
+                  <td><div class="input-field col s12"><input id="elasticcostperunit" type="text" class="validate"><label for="elasticcostperunit">cost/unit<label></div></td>
+                  <td><div class="input-field col s12"><input id="elasticallowance" type="text" class="validate"><label for="elasticallowance">Extra Allowance%</label></div></td>
+                  <td>Total Elastic cost</td>
+                  <td><div class="input-field col s12"><input id="elasticsupplier" type="text" class="validate"><label for="elasticsupplier">supplier</label></div></td>
+                  <td><div class="input-field col s12"><input id="elasticremark" type="text" class="validate"><label for="elasticremark">remark</label></div></td>
+                </tr>
+                <tr><th colspan="14"><a onclick='addelastic(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
                 <tr><th colspan="14"><i>Button</i></th></tr>
                 <tr id="button_headings">
                     <th>S no.</th>
