@@ -238,6 +238,36 @@
                 <tr><th colspan="14"><a onclick="addrelatedfabric(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
 
                 <tr><th colspan="14" style="background-color:grey;">Trims</th></tr>
+
+                <tr><th colspan="14"><i>Thread</i></th></tr>
+                <tr id="thread_headings">
+                    <th>S no.</th>
+                    <th colspan="2">Thread Type</th>
+                    <th>Content</th>
+                    <th>TKTsize</th>
+                    <th colspan="2">Thread Colour</th>
+                    <th>Consumption</th>
+                    <th>Cost/unit</th>
+                    <th>Extra Allowance%</th>
+                    <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr id='thread_form'>
+                  <td id='threadserialno'>1</td>
+                  <td colspan="2"><div class="input-field col s12"><select id='threadtype' class="browser-default"><option value="" disabled selected>Choose Thread type</option><option value="sewing">sewing</option><option value="plastic">decorative</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="threadcontent" type="text" class="validate"><label for="threadcontent">content</label></div></td>
+                  <td><div class="input-field col s12"><input id="tktsize" type="text" class="validate"><label for="tktsize">TKTsize</label></div></td>
+                  <td><div class="input-field col s12"><input id="threadcolor" type="text" class="validate"><label for="threadcolor">color</label></div></td>
+                  <td><div class="input-field col s12"><input id="threadconsumption" type="text" class="validate"><label for="threadconsumption">consumption</label></div></td>
+                  <td><div class="input-field col s12"><input id="threadcostperunit" type="text" class="validate"><label for="threadcostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="threadallowance" type="text" class="validate"><label for="threadallowance">Extra Allowance%</label></div></td>
+                  <td>Total Thread cost</td>
+                  <td><div class="input-field col s12"><input id="threadsupplier" type="text" class="validate"><label for="threadsupplier">supplier</label></div></td>
+                  <td><div class="input-field col s12"><input id="threadremark" type="text" class="validate"><label for="threadremark">remark</label></div></td>
+                </tr>
+                <tr><th colspan="14"><a onclick='addthread(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
                 <tr><th colspan="14"><i>Button</i></th></tr>
                 <tr id="button_headings">
                     <th>S no.</th>
@@ -248,7 +278,6 @@
                     <th>Cost</th>
                     <th>Cost/Unit</th>
                     <th>Total Cost</th>
-
                 </tr>
                 <tr id='button_form'>
                   <td id='buttonserialno'>1</td>
