@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
-from .models import Buyer,Costsheet
+from .models import Buyer,Costsheet,Fabricdata
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
@@ -14,6 +14,7 @@ from django.utils.crypto import get_random_string
 class CreateSheet(TemplateView):
     template_name = 'createsheet.html'
     def get(self, request, *wargs, **kwargs):
+        knitdata = Fabricdata.objects.filter(fabrictype='knit')
         args = {'buyers': Buyer.objects.all().order_by('buyer_name')}
         return render(request,self.template_name,args)
 
