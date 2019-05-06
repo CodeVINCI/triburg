@@ -327,22 +327,35 @@
                   <td><div class="input-field col s12"><input id="buttonremark" type="text" class="validate"><label for="buttonremark">Remark</label></div></td>
                 </tr>
                 <tr><th colspan="14"><a onclick='addbutton(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
+
                 <tr><th colspan="14"><i>Zipper</i></th></tr>
                 <tr id="zipper_headings">
                    <th>S no.</th>
                     <th colspan="2">Zipper type</th>
+                    <th>Material</th>
+                    <th>Teeth Size</th>
                     <th>Zipper length</th>
+                    <th>Colour</th>
                     <th>Consumption</th>
                     <th>Cost/Unit</th>
+                    <th>Extra Allowance%</th>
                     <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
                 </tr>
                 <tr id='zipper_form'>
                   <td id='zipperserialno'>1</td>
-                  <td colspan="2"><div class="input-field col s12"><select id='zippertype' class="browser-default"><option value="" disabled selected>Choose zipper type</option><option value="plastic">plastic</option><option value="metal">metal</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='zippertype' class="browser-default"><option value="" disabled selected>Choose zipper type</option><option value="Visible">Visible</option><option value="Concealed">Concealed</option><option value="Open-ended">Open-ended</option><option value="Closed-ended">Closed-ended</option><option value="Magnetic">Magnetic</option></select></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='zippermaterial' class="browser-default"><option value="" disabled selected>Choose Material</option><option value="plastic">plastic</option><option value="metal">metal</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="zipperteethsize" type="text" class="validate"><label for="zipperteethsize">mm</label></div></td>
                   <td><div class="input-field col s12"><input id="zipperlength" type="text" class="validate"><label for="zipperlength">length</label></div></td>
+                  <td><div class="input-field col s12"><input id="zippercolour" type="text" class="validate"><label for="zippercolour">colour</label></div></td>
                   <td><div class="input-field col s12"><input id="zipperconsumption" type="text" class="validate"><label for="zipperconsumption">consumption</label></div></td>
                   <td><div class="input-field col s12"><input id="zippercostperunit" type="text" class="validate"><label for="zippercostperunit">cost/unit</label></div></td>
+                  <td><div class="input-field col s12"><input id="zipperallowance" type="text" class="validate"><label for="zipperallowance">Extra Allowance%</label></div></td>
                   <td>Total zipper cost</td>
+                  <td><div class="input-field col s12"><input id="zippersupplier" type="text" class="validate"><label for="zippersupplier">supplier</label></div></td>
+                  <td><div class="input-field col s12"><input id="zipperremark" type="text" class="validate"><label for="zipperremark">remark</label></div></td>
                 </tr>
                 <tr><th colspan="14"><a onclick="addzipper(event)" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="14"><i>Hook and Eye</i></th></tr>
@@ -571,17 +584,21 @@
     var form = document.getElementById('knit_fabric_form');
     var serialno = form.querySelector('#fabricserialno').innerText;
     var fabricname = form.querySelector('#fabricname').value;
-    var gsm = form.querySelector('#fabricgsm').value;
     var content = form.querySelector('#fabriccontent').value;
+    var gsm = form.querySelector('#fabricgsm').value;
     var count = form.querySelector('#fabriccount').value;
     var construction = form.querySelector('#fabricconstruction').value;
+    var fabrictype = form.querySelector('#fabrictype').value;
     var fabrictotalwidth = form.querySelector('#fabrictotalwidth').value;
     var fabricconsumption = form.querySelector('#fabricconsumption').value;
     var fabricperunitcost = form.querySelector('#fabricperunitcost').value;
+    var fabricallowances = form.querySelector('#fabricallowances').value;
     var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
+    var fabricsupplier = form.querySelector('#fabricsupplier').value;
+    var fabricremark = form.querySelector('#fabricremark').value;
     var newRow = document.createElement("tr");
     newRow.setAttribute('class','knitfabricdata');
-    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+ gsm +'</td><td>'+content+'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td class="subcost">'+fabrictotal+'</td>';
+    newRow.innerHTML = '<td>'+ serialno +'</td><td>'+ fabricname +'</td><td>'+content+'</td><td>'+ gsm +'</td><td>'+count+'</td><td>'+construction+'</td><td>'+fabrictype+'</td><td>'+fabrictotalwidth+'</td><td>'+fabricconsumption+'</td><td>'+fabricperunitcost+'</td><td>'+ fabricallowances +'</td><td id="fabrictotal" class="subcost">'+fabrictotal+'</td><td>'+fabricsupplier+'</td><td>'+fabricremark+'</td>';
     form.parentNode.insertBefore(newRow,form);
     form.querySelector('#fabricserialno').innerText = parseInt(serialno)+1;
     form.querySelector('#fabricname').value = '';
@@ -592,6 +609,9 @@
     form.querySelector('#fabrictotalwidth').value='';
     form.querySelector('#fabricconsumption').value='';
     form.querySelector('#fabricperunitcost').value='';
+    form.querySelector('#fabricallowances').value='';
+    form.querySelector('#fabricsupplier').value='';
+    form.querySelector('#fabricremark').value='';
   }
   function addwovenfabric(event){
     var form = document.getElementById('woven_fabric_form');
