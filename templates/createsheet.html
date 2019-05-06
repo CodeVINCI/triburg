@@ -570,8 +570,7 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-    var knitdata = {{knitdata|safe}}
+<script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
@@ -579,7 +578,6 @@
     var dateinstances = M.Datepicker.init(dateelems);
     var tipelems = document.querySelectorAll('.tooltipped');
     var tipinstances = M.Tooltip.init(tipelems);
-    alert(knitdata);
   });
 
   function addknitfabric(event){

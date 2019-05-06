@@ -9,13 +9,14 @@ import smtplib
 from django.utils.crypto import get_random_string
 # Create your views here.
 
-
-
-
 class CreateSheet(TemplateView):
     template_name = 'createsheet.html'
     def get(self, request, *wargs, **kwargs):
-        args = {'buyers': Buyer.objects.all().order_by('buyer_name')}
+        knitdata = Fabricdata.objects.filter(fabrictype='Knit')
+        k=[]
+        for knit in knitdata:
+            k = kn 
+        args = {'buyers': Buyer.objects.all().order_by('buyer_name'),'knitdata':}
         return render(request,self.template_name,args)
 
 class PreviewSheet(TemplateView):
@@ -44,21 +45,6 @@ def savecostsheet(request):
         return JsonResponse({"success":1})
     else:
         return JsonResponse({"success":0})
-
-def getdata(request):
-    fabrictype = request.GET['fabrictype']
-    fabricname = request.GET['fabricname']
-    content = request.GET['content']
-    gsm = request.GET['gsm']
-    yarncount = request.GET['yarncount']
-    construction = request.GET['construction']
-    type = request.GET['type']
-#    return JsonResponse({"values":fabrictype+" "+fabricname+" "+content+" "+gsm+" "+yarncount+" "+construction+" "+type})
-    if type=="":
-        type = None
-    width = request.GET['width']
-    fab = Fabricdata.objects.get(fabrictype=fabrictype,fabricname=fabricname,content=content,gsm=gsm,yarncount=yarncount,construction=construction,type=type,width=width)
-    return JsonResponse({"rate":fab.rate})
 
 def sendcostsheet(request):
     key = request.GET['key']

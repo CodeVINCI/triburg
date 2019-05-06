@@ -6,6 +6,7 @@ urlpatterns = [
 path('createcostsheet/', CreateSheet.as_view()),
 path('previewcostsheet/', PreviewSheet.as_view()),
 path('profile/', Profile.as_view()),
+path('getdata/',views.getdata),
 path('savecostsheet/', views.savecostsheet),
 path('sendcostsheet/', views.sendcostsheet),
 ]
