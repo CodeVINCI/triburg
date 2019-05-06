@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User,UserRequest,Buyer,Costsheet
+from .models import User,UserRequest,Buyer,Costsheet,Fabricdata
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id','username','email','is_admin','user_type','first_name','last_name',)
@@ -12,3 +12,4 @@ admin.site.register(User, UserAdmin)
 admin.site.register(UserRequest)
 admin.site.register(Buyer)
 admin.site.register(Costsheet)
+admin.site.register(Fabricdata)
