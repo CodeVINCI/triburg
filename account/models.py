@@ -34,3 +34,19 @@ class Costsheet(models.Model):
     madeon = models.DateTimeField(null=True,blank=True)
     key = models.CharField(max_length=32,null=False,blank=False)
     sheet = JSONField()
+
+class Fabricdata(models.Model):
+    fabricname = models.CharField(max_length=25, null=True, blank=True)
+    content = models.CharField(max_length=25, null=True, blank=True)
+    gsm = models.IntegerField(default=0, null=True, blank=True)
+    yarncount = models.CharField(max_length=25, null=True, blank=True)
+    construction = models.CharField(max_length=25, null= True, blank=True)
+    type = models.CharField(max_length=25, null=True, blank=True)
+    width = models.IntegerField(null=True, blank=True)
+    rate = models.PositiveIntegerField(null=False,blank=False)
+
+    def __str__(self):
+        return self.fabricname
+
+    class Meta:
+        unique_together('fabricname','content','gsm','yarncount','construction','type','width')    
