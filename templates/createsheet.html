@@ -99,7 +99,7 @@
                     <td><div class="input-field col s12"><select id="fabrictype" autocomplete="off" class="browser-default"><option value="" disabled selected>Choose Type</option><option value="Greige">Greige</option><option value="Bleached">Bleached</option><option value="Solid Dyed">Solid Dyed</option><option value="Yam Dyed">Yam Dyed</option><option value="Printed">Printed</option><option value="Other">Other</option></select></div></td>
                     <td><div class="input-field col s12"><input id="fabrictotalwidth" autocomplete="off" type="text" class="validate"><label for="fabrictotalwidth">inches</label></div></td>
                     <td><div class="input-field col s12"><input id="fabricconsumption" autocomplete="off" type="text" class="validate"><label for="fabricconsumption">metres</label></div></td>
-                    <td><div class="input-field col s12"><input id="fabricperunitcost" autocomplete="off" type="text" class="validate"><label for="fabricperunitcost">Cost/m</label></div></td>
+                    <td><div class="input-field col s12"><input id="fabricperunitcost" autocomplete="off" type="text" placeholder="cost/unit" class="validate"></div></td>
                     <td><div class="input-field col s12"><input id="fabricallowances" autocomplete="off" type="text" class="validate"><label for="fabricallowances">%</label></div></td>
                     <td>(consumption)*(cost/m)</td>
                     <td><div class="input-field col s12"><input id="fabricsupplier" autocomplete="off" type="text" class="validate"><label for="fabricsupplier">supplier</label></div></td>
@@ -579,8 +579,29 @@
     var tipelems = document.querySelectorAll('.tooltipped');
     var tipinstances = M.Tooltip.init(tipelems);
     document.getElementById('fabrictotalwidth').addEventListener("input", function(e) {
-      alert('q');
-    };
+      var v = e.target.value;
+      if(parseInt(v)>30){
+       var fabrictype = "Knit";
+       var fabricname = document.getElementById("fabricname").value;
+       var content = document.getElementById("fabriccontent").value;
+       var gsm = document.getElementById("fabricgsm").value;
+       if(gsm===""){
+          gsm =0;
+         }
+       var yarncount = document.getElementById("fabriccount").value.replace(";","%3B");
+       var construction = document.getElementById("fabricconstruction").value;
+       var type = document.getElementById("fabrictype").value;
+       var width  = document.getElementById("fabrictotalwidth").value;
+       var xmlHttp = new XMLHttpRequest();
+       xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            var rate = JSON.parse(xmlHttp.responseText)['rate'];
+            document.getElementById("fabricperunitcost").value = rate;
+    }
+    xmlHttp.open("GET","http://139.59.58.219/accounts/getdata/?fabrictype="+fabrictype+"&fabricname="+fabricname+"&content="+content+"&gsm="+gsm+"&yarncount="+yarncount+"&construction="+construction+"&type="+type+"&width="+width, true); // true for asynchronous 
+    xmlHttp.send(null);
+      }
+    });
   });
 
   function addknitfabric(event){

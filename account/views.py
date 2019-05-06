@@ -61,7 +61,7 @@ def getdata(request):
         fab = Fabricdata.objects.get(fabrictype=fabrictype,fabricname=fabricname,content=content,gsm=gsm,yarncount=yarncount,construction=construction,type=type,width=width)
         return JsonResponse({"rate":fab.rate})
     except:
-        return JsonResponse{{"rate":0}}    
+        return JsonResponse({"rate":0})    
 
 def sendcostsheet(request):
     key = request.GET['key']
