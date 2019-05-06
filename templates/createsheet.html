@@ -593,7 +593,8 @@
     var fabricconsumption = form.querySelector('#fabricconsumption').value;
     var fabricperunitcost = form.querySelector('#fabricperunitcost').value;
     var fabricallowances = form.querySelector('#fabricallowances').value;
-    var fabrictotal = parseFloat(fabricconsumption)* parseFloat(fabricperunitcost);
+    var fabrictotal = (parseFloat(fabricconsumption)* parseFloat(fabricperunitcost))+(parseFloat(fabricconsumption)*parseFloat(wovenfabricperunitcost)*(parseFloat(fabricallowances)/100));
+
     var fabricsupplier = form.querySelector('#fabricsupplier').value;
     var fabricremark = form.querySelector('#fabricremark').value;
     var newRow = document.createElement("tr");
