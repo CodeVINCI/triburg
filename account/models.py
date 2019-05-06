@@ -36,6 +36,7 @@ class Costsheet(models.Model):
     sheet = JSONField()
 
 class Fabricdata(models.Model):
+    fabrictype = models.CharField(max_length=25, null=False, blank=False)
     fabricname = models.CharField(max_length=25, null=True, blank=True)
     content = models.CharField(max_length=25, null=True, blank=True)
     gsm = models.IntegerField(default=0, null=True, blank=True)
@@ -49,4 +50,4 @@ class Fabricdata(models.Model):
         return self.fabricname
 
     class Meta:
-        unique_together('fabricname','content','gsm','yarncount','construction','type','width')    
+        unique_together('fabricname','content','gsm','yarncount','construction','type','width')
