@@ -50,4 +50,4 @@ class Fabricdata(models.Model):
         return self.fabricname
 
     class Meta:
-        unique_together('fabricname','content','gsm','yarncount','construction','type','width')
+        unique_together = ('fabricname','content','gsm','yarncount','construction','type','width')
