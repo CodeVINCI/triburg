@@ -299,22 +299,32 @@
                 <tr id="button_headings">
                     <th>S no.</th>
                     <th colspan="2">Button Type</th>
+                    <th>Button Material</th>
                     <th>Button Size</th>
+                    <th>Colour</th>
                     <th>Consumption(pcs)</th>
-                    <th colspan="2">Rs/pc, Rs/dozen, Rs/gross</th>
+                    <th>Units</th>
                     <th>Cost</th>
                     <th>Cost/Unit</th>
+                    <th>Extra Allowance%</th>
                     <th>Total Cost</th>
+                    <th>Supplier</th>
+                    <th>Remarks</th>
                 </tr>
                 <tr id='button_form'>
                   <td id='buttonserialno'>1</td>
-                  <td colspan="2"><div class="input-field col s12"><select id='buttontype' class="browser-default"><option value="" disabled selected>Choose button type</option><option value="wooden">wooden</option><option value="plastic">plastic</option><option value="metal">metal</option></select></div></td>
-                  <td><div class="input-field col s12"><input id="buttonsize" type="text" class="validate"><label for="buttonsize">Linge</label></div></td>
+                  <td colspan="2"><div class="input-field col s12"><select id='buttontype' class="browser-default"><option value="" disabled selected>Choose button type</option><option value="Flat Two-Hole">Flat Two Hole</option><option value="Flat Four-Hole">Flat Four-Hole</option><option value="Shank">Shank</option><option value="Stud Button">Stud Button</option><option value="Snap">Snap</option><option value="Mandarin">Mandarin</option><option value="Covered">Covered</option><option value="Rivet">Rivet</option><option value="Eyelet">Eyelet</option><option value="Grommet">Grommet</option><option value="Other">Other</option></select></div></td>
+                  <td><div class="input-field col s12"><select id='buttonmaterial' class="browser-default"><option value="" disabled selected>Choose Material</option><option value="Metal">Metal</option><option value="Wood">Wood</option><option value="Plastic">Plastic</option><option value="Alloy">Alloy</option><option value="Resin">Resin</option><option value="Coconut">Coconut</option><option value="Other">Other</option></select></div></td>
+                  <td><div class="input-field col s12"><input id="buttonsize" type="text" class="validate"><label for="buttonsize">Ligne</label></div></td>
+                  <td><div class="input-field col s12"><input id="buttoncolour" type="text" class="validate"><label for="buttoncolour">pcs</label></div></td>
                   <td><div class="input-field col s12"><input id="buttonconsumption" type="text" class="validate"><label for="buttonconsumption">pcs</label></div></td>
-                  <td colspan="2"><div class="input-field col s12"><select id='buttoncostunit' class="browser-default"><option value="" disabled selected>Select option</option><option value="Rs/piece">Rs/piece</option><option value="Rs/dozen">Rs/dozen</option><option value="Rs/gross">Rs/gross</option></select></div></td>
+                  <td><div class="input-field col s12"><select id='buttoncostunit' class="browser-default"><option value="" disabled selected>Select option</option><option value="Rs/piece">Rs/piece</option><option value="Rs/dozen">Rs/dozen</option><option value="Rs/gross">Rs/gross</option></select></div></td>
                   <td><div class="input-field col s12"><input id="buttoncost" type="text" class="validate"><label for="buttoncost">cost</label></div></td>
                   <td>Cost per piece</td>
+                  <td><td><div class="input-field col s12"><input id="buttonallowances" type="text" class="validate"><label for="buttonallowances">Extra Allowance%</label></div></td></td>
                   <td>Total button cost</td>
+                  <td><div class="input-field col s12"><input id="buttonsupplier" type="text" class="validate"><label for="buttonsupplier">Supplier</label></div></td>
+                  <td><div class="input-field col s12"><input id="buttonremark" type="text" class="validate"><label for="buttonremark">Remark</label></div></td>
                 </tr>
                 <tr><th colspan="14"><a onclick='addbutton(event)' class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>add</a></th></tr>
                 <tr><th colspan="14"><i>Zipper</i></th></tr>
