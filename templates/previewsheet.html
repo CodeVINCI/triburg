@@ -16,7 +16,13 @@
       </ul>
     </div>
   </nav>
-<div class="row" style="align-content: center;text-align: center;padding-left: 8%;padding-right: 8%;">
+<div class="row" style="align-content: center;text-align: center;padding-left: 1%;padding-right: 1%;">
+
+ {% if request.user.user_type == 'merchant'%}
+  <div class="row" style="align-content: center;text-align: center;">
+      <a onclick="sendforapproval(event)" class="waves-effect waves-light btn-large blue">Get Approved</a>
+  </div>
+  {% endif %}
     <div style="overflow-y: scroll; height:600px;width: 98%;text-align: center;align-content: center;margin: auto;">
         <table id=costsheettable>
             <tr><th colspan="10" style="background-color:grey;">Fabric Details</th></tr>

@@ -33,6 +33,7 @@ class Costsheet(models.Model):
     creator = models.ForeignKey(User,on_delete=models.CASCADE)
     madeon = models.DateTimeField(null=True,blank=True)
     key = models.CharField(max_length=32,null=False,blank=False)
+    forpreview = models.BooleanField(default=False)
     sheet = JSONField()
 
 class Fabricdata(models.Model):
